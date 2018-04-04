@@ -1,7 +1,9 @@
 ﻿using Hospital.Data.Enums;
 using Hospital.Dto;
+using Hospital.Helpers;
 using Hospital.Services.Department;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Hospital
@@ -10,13 +12,16 @@ namespace Hospital
     {
         private readonly IDepartmentService _departmentService;
         private readonly int _institutionId;
+        private readonly IObjectListUpdateHelper _listUpdateHelper;
 
         private DepartmentDto _selected;
 
         public DepartmentsForm(int institutionId)
         {
-            _institutionId = institutionId;
             InitializeComponent();
+
+            _institutionId = institutionId;
+            _listUpdateHelper = new ObjectListUpdateHelper();
 
             objectListView.MultiSelect = false;
             objectListView.FullRowSelect = true;
@@ -63,6 +68,11 @@ namespace Hospital
                 var list = await _departmentService.GetListAsync(_institutionId);
                 objectListView.SetObjects(list);
             });
+        }
+
+        internal void EditEntityInList(DepartmentDto editedEntity)
+        {
+            _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 
         private void addButton_Click(object sender, EventArgs e)

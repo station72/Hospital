@@ -1,7 +1,7 @@
 ﻿using Hospital.Dto;
+using Hospital.Helpers;
 using Hospital.Services.TherapeuticInstitutions;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -10,13 +10,14 @@ namespace Hospital
     public partial class InstitutionsForm : BaseForm
     {
         private readonly ITherapeuticInstitutionsService _institutionsService;
-
+        private readonly ObjectListUpdateHelper _listUpdateHelper;
         private TherapeuticInstitutionDto _selected;
 
         public InstitutionsForm()
         {
             InitializeComponent();
             _institutionsService = new TherapeuticInstitutionsService();
+            _listUpdateHelper = new ObjectListUpdateHelper();
             InitControls();
 
             objectListView.MultiSelect = false;
@@ -99,30 +100,7 @@ namespace Hospital
 
         internal void EditEntityInList(TherapeuticInstitutionDto editedEntity)
         {
-            var rowIndex = GetRowIndex(editedEntity.Id);
-            if (!rowIndex.HasValue)
-            {
-                Debug.Fail($"Row index has not been found. Entity id {editedEntity.Id}");
-                return;
-            }
-
-            var listItem = objectListView.GetItem(rowIndex.Value);
-            listItem.RowObject = editedEntity;
-        }
-
-        private int? GetRowIndex(int institutionId)
-        {
-            for (int i = 0; i < objectListView.GetItemCount(); i++)
-            {
-                var item = objectListView.GetItem(i);
-                var institution = item.RowObject as TherapeuticInstitutionDto;
-                if (institution.Id == institutionId)
-                {
-                    return i;
-                }
-            }
-
-            return null;
+            _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 
         internal void AddInsitutionToList(TherapeuticInstitutionDto newItem)

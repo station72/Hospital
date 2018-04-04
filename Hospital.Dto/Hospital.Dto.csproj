@@ -43,12 +43,17 @@
     <Compile Include="DepartmentDto.cs" />
     <Compile Include="Input\CreateDepartmentInputDto.cs" />
     <Compile Include="Input\CreateInstitutionInputDto.cs" />
+    <Compile Include="Input\EditDepartmentInputDto.cs" />
     <Compile Include="Input\EditInsitutionInputDto.cs" />
     <Compile Include="TherapeuticInstitutionDto.cs" />
     <Compile Include="UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hospital.Common\Hospital.Common.csproj">
+      <Project>{81A5549F-65CA-48F0-B37E-07C4355272A0}</Project>
+      <Name>Hospital.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hospital.Data\Hospital.Data.csproj">
       <Project>{BFB8D98A-9F50-4A1A-80DB-C74D8EA5DF10}</Project>
       <Name>Hospital.Data</Name>

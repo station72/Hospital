@@ -80,6 +80,8 @@
     <Compile Include="EditInstitutionForm.Designer.cs">
       <DependentUpon>EditInstitutionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IObjectListUpdateHelper.cs" />
+    <Compile Include="Helpers\ObjectListUpdateHelper.cs" />
     <Compile Include="InstitutionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentsForm.resx">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDepartmentForm.resx">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditInstitutionForm.resx">
       <DependentUpon>EditInstitutionForm.cs</DependentUpon>

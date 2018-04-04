@@ -12,5 +12,7 @@ namespace Hospital.Services.Department
         Task DeleteAsync(int id);
 
         Task<DepartmentDto> CreateNewAsync(CreateDepartmentInputDto input);
+
+        Task<DepartmentDto> EditAsync(EditDepartmentInputDto inputDto);
     }
 }

@@ -33,6 +33,25 @@ namespace Hospital.Services.Department
             await Task.Delay(TimeSpan.FromSeconds(3));
         }
 
+        public async Task<DepartmentDto> EditAsync(EditDepartmentInputDto input)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
+            if (input.Name == "a")
+            {
+                throw new HospitalException("Такое имя уже есть!");
+            }
+
+            return new DepartmentDto
+            {
+                Id = input.Id,
+                Address = input.Address,
+                Name = input.Name,
+                Profile = input.Name,
+                TherapeuticInstitutionsId = input.TherapeuticInstitutionsId
+            };
+        }
+
         public async Task<IEnumerable<DepartmentDto>> GetListAsync(int institutionId)
         {
             await Task.Delay(TimeSpan.FromSeconds(4));

@@ -1,6 +1,8 @@
-﻿namespace Hospital.Dto
+﻿using Hospital.Common;
+
+namespace Hospital.Dto
 {
-    public class DepartmentDto
+    public class DepartmentDto : IIdEntity
     {
         public int Id { get; set; }
 
