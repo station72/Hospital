@@ -2,11 +2,32 @@
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Hospital.Dto.Input;
+using Hospital.Common;
 
 namespace Hospital.Services.Department
 {
     public class DepartmentService : IDepartmentService
     {
+        public async Task<DepartmentDto> CreateNewAsync(CreateDepartmentInputDto input)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
+            if (input.Name=="a")
+            {
+                throw new HospitalException("Такое имя уже есть!");
+            }
+
+            return new DepartmentDto
+            {
+                Id = 10,
+                Address = input.Address,
+                Name = input.Name,
+                Profile = input.Name,
+                TherapeuticInstitutionsId = input.TherapeuticInstitutionsId
+            };
+        }
+
         public async Task DeleteAsync(int id)
         {
             await Task.Delay(TimeSpan.FromSeconds(3));

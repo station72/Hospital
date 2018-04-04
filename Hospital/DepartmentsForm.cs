@@ -67,7 +67,7 @@ namespace Hospital
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var createForm = new CreateDepartmentForm(this);
+            var createForm = new CreateDepartmentForm(this, _institutionId);
             createForm.ShowDialog();
         }
 
@@ -78,6 +78,11 @@ namespace Hospital
 
             var editForm = new EditDepartmentForm(_selected, this);
             editForm.ShowDialog();
+        }
+
+        internal void AddDepartmentToList(DepartmentDto newItem)
+        {
+            objectListView.AddObject(newItem);
         }
 
         private async void deleteButton_Click(object sender, EventArgs e)

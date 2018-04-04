@@ -46,7 +46,7 @@
             // okpoLabel
             // 
             okpoLabel.AutoSize = true;
-            okpoLabel.Location = new System.Drawing.Point(79, 16);
+            okpoLabel.Location = new System.Drawing.Point(61, 12);
             okpoLabel.Name = "okpoLabel";
             okpoLabel.Size = new System.Drawing.Size(38, 13);
             okpoLabel.TabIndex = 0;
@@ -56,7 +56,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(60, 47);
+            label1.Location = new System.Drawing.Point(42, 43);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(57, 13);
             label1.TabIndex = 2;
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(79, 81);
+            label2.Location = new System.Drawing.Point(61, 77);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(38, 13);
             label2.TabIndex = 4;
@@ -75,7 +75,7 @@
             // 
             // okpoInput
             // 
-            this.okpoInput.Location = new System.Drawing.Point(123, 13);
+            this.okpoInput.Location = new System.Drawing.Point(105, 9);
             this.okpoInput.Name = "okpoInput";
             this.okpoInput.Size = new System.Drawing.Size(322, 20);
             this.okpoInput.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(123, 44);
+            this.nameInput.Location = new System.Drawing.Point(105, 40);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(322, 20);
             this.nameInput.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             // addressInput
             // 
-            this.addressInput.Location = new System.Drawing.Point(123, 78);
+            this.addressInput.Location = new System.Drawing.Point(105, 74);
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(322, 20);
             this.addressInput.TabIndex = 5;
