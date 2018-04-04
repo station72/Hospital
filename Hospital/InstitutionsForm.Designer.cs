@@ -77,6 +77,7 @@
             this.editButton.TabIndex = 1;
             this.editButton.Text = "Редактировать";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 

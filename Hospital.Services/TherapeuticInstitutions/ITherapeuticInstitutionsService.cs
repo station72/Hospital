@@ -12,5 +12,7 @@ namespace Hospital.Services.TherapeuticInstitutions
         Task DeleteAsync(int id);
 
         Task<TherapeuticInstitutionDto> CreateNewAsync(CreateInstitutionInputDto createInstitutionInputDto);
+
+        Task<TherapeuticInstitutionDto> EditAsync(EditInsitutionInputDto inputDto);
     }
 }

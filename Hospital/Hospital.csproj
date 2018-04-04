@@ -56,6 +56,12 @@
     <Compile Include="CreateInstitutionForm.Designer.cs">
       <DependentUpon>CreateInstitutionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditInstitutionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditInstitutionForm.Designer.cs">
+      <DependentUpon>EditInstitutionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InstitutionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateInstitutionForm.resx">
       <DependentUpon>CreateInstitutionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditInstitutionForm.resx">
+      <DependentUpon>EditInstitutionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InstitutionsForm.resx">
       <DependentUpon>InstitutionsForm.cs</DependentUpon>

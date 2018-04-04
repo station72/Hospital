@@ -33,6 +33,24 @@ namespace Hospital.Services.TherapeuticInstitutions
             return;
         }
 
+        public async Task<TherapeuticInstitutionDto> EditAsync(EditInsitutionInputDto input)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
+            if (input.Name == "a")
+            {
+                throw new HospitalException("Такое имя уже есть");
+            }
+
+            return new TherapeuticInstitutionDto
+            {
+                Id = input.Id,
+                Address = input.Address,
+                Name = input.Name,
+                OKPO = input.OKPO
+            };
+        }
+
         //TODO: add paging
         public async Task<IEnumerable<TherapeuticInstitutionDto>> GetInstitutionsAsync()
         {

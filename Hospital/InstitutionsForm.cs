@@ -87,12 +87,39 @@ namespace Hospital
             }
             catch (Exception ex)
             {
-                                
             }
             finally
             {
                 SetUiActivity(true);
             }
+        }
+
+        internal void EditEntity(TherapeuticInstitutionDto editedEntity)
+        {
+            var rowIndex = GetRowIndex(editedEntity.Id);
+            if (!rowIndex.HasValue)
+            {
+                Debug.Fail($"Row index has not been found. Entity id {editedEntity.Id}");
+                return;
+            }
+
+            var listItem = objectListView.GetItem(rowIndex.Value);
+            listItem.RowObject = editedEntity;
+        }
+
+        private int? GetRowIndex(int institutionId)
+        {
+            for (int i = 0; i < objectListView.GetItemCount(); i++)
+            {
+                var item = objectListView.GetItem(i);
+                var institution = item.RowObject as TherapeuticInstitutionDto;
+                if (institution.Id == institutionId)
+                {
+                    return i;
+                }
+            }
+
+            return null;
         }
 
         internal void AddInsitution(TherapeuticInstitutionDto newItem)
@@ -104,6 +131,15 @@ namespace Hospital
         {
             var createForm = new CreateInstitutionForm(this);
             createForm.ShowDialog();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (_selected == null)
+                return;
+
+            var editForm = new EditInstitutionForm(_selected, this);
+            editForm.ShowDialog();
         }
     }
 }
