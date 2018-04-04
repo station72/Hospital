@@ -15,7 +15,9 @@ namespace Hospital
         public EditInstitutionForm(TherapeuticInstitutionDto entity, InstitutionsForm institutionsForm)
         {
             InitializeComponent();
-
+            DisableResize();
+            
+            ControlBox = false;
             InitFields(entity);
 
             _entityId = entity.Id;
@@ -87,7 +89,7 @@ namespace Hospital
                 };
 
                 var editedEntity = await _institutionService.EditAsync(inputDto);
-                _institutionsForm.EditEntity(editedEntity);
+                _institutionsForm.EditEntityInList(editedEntity);
                 Close();
             }
             catch (HospitalException ex)

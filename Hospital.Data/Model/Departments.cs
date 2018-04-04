@@ -12,6 +12,8 @@ namespace Hospital.Data.Model
 
         public int TherapeuticInstitutionsId { get; set; }
 
+        public string Address { get; set; }
+
         [ForeignKey(nameof(TherapeuticInstitutionsId))]
         public TherapeuticInstitutions TherapeuticInstitution { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Hospital
 {
-    partial class InstitutionsForm
+    partial class DepartmentsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.showPersonalButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.objectListView = new BrightIdeasSoftware.ObjectListView();
             this.Название = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Адресс = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.editButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.showDepartmentsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // showPersonalButton
+            // 
+            this.showPersonalButton.Location = new System.Drawing.Point(12, 12);
+            this.showPersonalButton.Name = "showPersonalButton";
+            this.showPersonalButton.Size = new System.Drawing.Size(114, 40);
+            this.showPersonalButton.TabIndex = 9;
+            this.showPersonalButton.Text = "Мед. персонал";
+            this.showPersonalButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(819, 105);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(114, 40);
+            this.deleteButton.TabIndex = 8;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(819, 12);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(113, 41);
+            this.addButton.TabIndex = 7;
+            this.addButton.Text = "Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(819, 59);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(114, 40);
+            this.editButton.TabIndex = 6;
+            this.editButton.Text = "Редактировать";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // objectListView
             // 
@@ -50,7 +89,7 @@
             this.objectListView.Location = new System.Drawing.Point(132, 12);
             this.objectListView.Name = "objectListView";
             this.objectListView.Size = new System.Drawing.Size(681, 464);
-            this.objectListView.TabIndex = 0;
+            this.objectListView.TabIndex = 5;
             this.objectListView.UseCompatibleStateImageBehavior = false;
             this.objectListView.View = System.Windows.Forms.View.Details;
             // 
@@ -70,58 +109,18 @@
             this.Адресс.Text = "Адресс";
             this.Адресс.Width = 346;
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(819, 59);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(114, 40);
-            this.editButton.TabIndex = 1;
-            this.editButton.Text = "Редактировать";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(819, 12);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(113, 41);
-            this.addButton.TabIndex = 2;
-            this.addButton.Text = "Добавить";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(819, 105);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(114, 40);
-            this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // showDepartmentsButton
-            // 
-            this.showDepartmentsButton.Location = new System.Drawing.Point(12, 12);
-            this.showDepartmentsButton.Name = "showDepartmentsButton";
-            this.showDepartmentsButton.Size = new System.Drawing.Size(114, 40);
-            this.showDepartmentsButton.TabIndex = 4;
-            this.showDepartmentsButton.Text = "Отделения";
-            this.showDepartmentsButton.UseVisualStyleBackColor = true;
-            this.showDepartmentsButton.Click += new System.EventHandler(this.showDepartmentsButton_Click);
-            // 
-            // InstitutionsForm
+            // DepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 488);
-            this.Controls.Add(this.showDepartmentsButton);
+            this.Controls.Add(this.showPersonalButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.objectListView);
-            this.Name = "InstitutionsForm";
-            this.Text = "Лечебные учреждения";
+            this.Name = "DepartmentsForm";
+            this.Text = "DepartmentsForm";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).EndInit();
             this.ResumeLayout(false);
 
@@ -129,12 +128,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Button showPersonalButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button editButton;
         private BrightIdeasSoftware.ObjectListView objectListView;
         private BrightIdeasSoftware.OLVColumn Название;
         private BrightIdeasSoftware.OLVColumn Адресс;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button showDepartmentsButton;
     }
 }

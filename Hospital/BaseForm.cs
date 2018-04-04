@@ -11,6 +11,12 @@ namespace Hospital
             CurrentUser = new UserDto { Id = 1, Login = "admin", Role = Data.Enums.UserRoles.Admin };
         }
 
-        public static UserDto CurrentUser { get; set; }
+        protected static UserDto CurrentUser { get; set; }
+
+        protected void DisableResize()
+        {
+            MaximumSize = Size;
+            MinimumSize = Size;
+        }
     }
 }

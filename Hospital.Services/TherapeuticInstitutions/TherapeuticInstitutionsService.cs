@@ -54,6 +54,8 @@ namespace Hospital.Services.TherapeuticInstitutions
         //TODO: add paging
         public async Task<IEnumerable<TherapeuticInstitutionDto>> GetInstitutionsAsync()
         {
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
             return new List<TherapeuticInstitutionDto>
             {
                 new TherapeuticInstitutionDto
@@ -84,6 +86,12 @@ namespace Hospital.Services.TherapeuticInstitutions
                 {
                     Id = 5,
                     Name = "Name5",
+                    Address = "Address5"
+                },
+                new TherapeuticInstitutionDto
+                {
+                    Id = 6,
+                    Name = "Name6",
                     Address = "Address6"
                 },
                 new TherapeuticInstitutionDto

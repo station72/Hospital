@@ -50,11 +50,29 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CreateDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDepartmentForm.Designer.cs">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateInstitutionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateInstitutionForm.Designer.cs">
       <DependentUpon>CreateInstitutionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentsForm.Designer.cs">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDepartmentForm.Designer.cs">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditInstitutionForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateInstitutionForm.resx">
       <DependentUpon>CreateInstitutionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentsForm.resx">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditInstitutionForm.resx">
       <DependentUpon>EditInstitutionForm.cs</DependentUpon>

@@ -77,7 +77,7 @@ namespace Hospital
                     Name = addressInput.Text
                 });
 
-                _parentForm.AddInsitution(newItem);
+                _parentForm.AddInsitutionToList(newItem);
 
                 this.Close();
             }

@@ -25,29 +25,35 @@ namespace Hospital
 
             editButton.Enabled = false;
             deleteButton.Enabled = false;
+            showDepartmentsButton.Enabled = false;
         }
 
+        //TODO: move to helper
         private void ObjectListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = objectListView.SelectedObject as TherapeuticInstitutionDto;
+            _selected = item;
 
             if (item == null)
             {
                 editButton.Enabled = false;
                 deleteButton.Enabled = false;
+                showDepartmentsButton.Enabled = false;
                 return;
             }
 
-            _selected = item;
             editButton.Enabled = true;
             deleteButton.Enabled = true;
+            showDepartmentsButton.Enabled = true;
         }
 
-        void SetUiActivity(bool isActive)
+        private void SetUiActivity(bool isActive)
         {
             addButton.Enabled = isActive;
             editButton.Enabled = isActive;
             deleteButton.Enabled = isActive;
+            showDepartmentsButton.Enabled = isActive;
+            objectListView.Enabled = isActive;
         }
 
         private void InitControls()
@@ -59,16 +65,13 @@ namespace Hospital
                 deleteButton.Visible = false;
             }
 
+            Cursor = Cursors.WaitCursor;
             Task.Run(async () =>
             {
                 var result = await _institutionsService.GetInstitutionsAsync();
                 objectListView.SetObjects(result);
+                Cursor = Cursors.Default;
             });
-        }
-
-        private void InstitutionsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Debug.Print("InstitutionsForm_FormClosed");
         }
 
         private async void deleteButton_Click(object sender, EventArgs e)
@@ -79,13 +82,13 @@ namespace Hospital
             try
             {
                 SetUiActivity(false);
-
+                
                 await _institutionsService.DeleteAsync(_selected.Id);
 
                 objectListView.RemoveObject(_selected);
                 _selected = null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             finally
@@ -94,7 +97,7 @@ namespace Hospital
             }
         }
 
-        internal void EditEntity(TherapeuticInstitutionDto editedEntity)
+        internal void EditEntityInList(TherapeuticInstitutionDto editedEntity)
         {
             var rowIndex = GetRowIndex(editedEntity.Id);
             if (!rowIndex.HasValue)
@@ -122,7 +125,7 @@ namespace Hospital
             return null;
         }
 
-        internal void AddInsitution(TherapeuticInstitutionDto newItem)
+        internal void AddInsitutionToList(TherapeuticInstitutionDto newItem)
         {
             objectListView.AddObject(newItem);
         }
@@ -140,6 +143,15 @@ namespace Hospital
 
             var editForm = new EditInstitutionForm(_selected, this);
             editForm.ShowDialog();
+        }
+
+        private void showDepartmentsButton_Click(object sender, EventArgs e)
+        {
+            if (_selected == null)
+                return;
+
+            var deparmentsForm = new DepartmentsForm(_selected.Id);
+            deparmentsForm.Show();
         }
     }
 }
