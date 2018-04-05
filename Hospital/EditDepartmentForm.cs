@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hospital
 {
-    public partial class EditDepartmentForm : Form
+    public partial class EditDepartmentForm : BaseForm
     {
         private readonly int _entityId;
         private int _institutionId;

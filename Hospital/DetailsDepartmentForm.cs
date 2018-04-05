@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Hospital
 {
-    public partial class DetailsDepartmentForm : Form
+    public partial class DetailsDepartmentForm : BaseForm
     {
         public DetailsDepartmentForm(DepartmentDto entity)
         {

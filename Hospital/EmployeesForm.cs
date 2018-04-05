@@ -28,8 +28,14 @@ namespace Hospital
             objectListView.FullRowSelect = true;
             objectListView.SelectedIndexChanged += ObjectListView_SelectedIndexChanged;
 
-            editButton.Enabled = false;
-            deleteButton.Enabled = false;
+            SetEnabledSelectedItemButton(false);
+        }
+
+        void SetEnabledSelectedItemButton(bool isEnabled)
+        {
+            editButton.Enabled = isEnabled;
+            deleteButton.Enabled = isEnabled;
+            detailsButton.Enabled = isEnabled;
         }
 
         //TODO: move to helper
@@ -40,13 +46,11 @@ namespace Hospital
 
             if (item == null)
             {
-                editButton.Enabled = false;
-                deleteButton.Enabled = false;
+                SetEnabledSelectedItemButton(false);
                 return;
             }
 
-            editButton.Enabled = true;
-            deleteButton.Enabled = true;
+            SetEnabledSelectedItemButton(true);
         }
 
         private void SetUiActivity(bool isActive)
@@ -64,6 +68,10 @@ namespace Hospital
                 addButton.Visible = false;
                 editButton.Visible = false;
                 deleteButton.Visible = false;
+            }
+            else
+            {
+                detailsButton.Visible = false;
             }
 
             Cursor = Cursors.WaitCursor;
@@ -132,6 +140,15 @@ namespace Hospital
             {
                 SetUiActivity(true);
             }
+        }
+
+        private void detailsButton_Click(object sender, EventArgs e)
+        {
+            if (_selected == null)
+                return;
+
+            var form = new DetailsEmployeeForm(_selected);
+            form.ShowDialog();
         }
     }
 }

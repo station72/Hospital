@@ -32,8 +32,9 @@
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.objectListView = new BrightIdeasSoftware.ObjectListView();
-            this.Фамилия = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Имя = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Фамилия = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.detailsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,21 +77,12 @@
             this.Имя,
             this.Фамилия});
             this.objectListView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView.Location = new System.Drawing.Point(12, 12);
+            this.objectListView.Location = new System.Drawing.Point(131, 12);
             this.objectListView.Name = "objectListView";
-            this.objectListView.Size = new System.Drawing.Size(801, 464);
+            this.objectListView.Size = new System.Drawing.Size(682, 464);
             this.objectListView.TabIndex = 5;
             this.objectListView.UseCompatibleStateImageBehavior = false;
             this.objectListView.View = System.Windows.Forms.View.Details;
-            // 
-            // Фамилия
-            // 
-            this.Фамилия.AspectName = "LastName";
-            this.Фамилия.DisplayIndex = 0;
-            this.Фамилия.Groupable = false;
-            this.Фамилия.IsEditable = false;
-            this.Фамилия.Text = "Фамилия";
-            this.Фамилия.Width = 333;
             // 
             // Имя
             // 
@@ -101,11 +93,31 @@
             this.Имя.Text = "Имя";
             this.Имя.Width = 346;
             // 
+            // Фамилия
+            // 
+            this.Фамилия.AspectName = "LastName";
+            this.Фамилия.DisplayIndex = 0;
+            this.Фамилия.Groupable = false;
+            this.Фамилия.IsEditable = false;
+            this.Фамилия.Text = "Фамилия";
+            this.Фамилия.Width = 333;
+            // 
+            // detailsButton
+            // 
+            this.detailsButton.Location = new System.Drawing.Point(12, 12);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(113, 41);
+            this.detailsButton.TabIndex = 9;
+            this.detailsButton.Text = "Подробнее";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
             // EmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 488);
+            this.Controls.Add(this.detailsButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.editButton);
@@ -124,5 +136,6 @@
         private BrightIdeasSoftware.ObjectListView objectListView;
         private BrightIdeasSoftware.OLVColumn Фамилия;
         private BrightIdeasSoftware.OLVColumn Имя;
+        private System.Windows.Forms.Button detailsButton;
     }
 }

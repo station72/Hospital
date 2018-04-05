@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Hospital
 {
-    public partial class CreateInstitutionForm : Form
+    public partial class CreateInstitutionForm : BaseForm
     {
         private readonly ITherapeuticInstitutionsService _institutionService;
         private readonly InstitutionsForm _parentForm;
