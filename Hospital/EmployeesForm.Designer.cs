@@ -1,6 +1,6 @@
 ﻿namespace Hospital
 {
-    partial class DepartmentsForm
+    partial class EmployeesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.showPersonalButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.objectListView = new BrightIdeasSoftware.ObjectListView();
-            this.Название = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Адресс = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Фамилия = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Имя = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // showPersonalButton
-            // 
-            this.showPersonalButton.Location = new System.Drawing.Point(12, 12);
-            this.showPersonalButton.Name = "showPersonalButton";
-            this.showPersonalButton.Size = new System.Drawing.Size(114, 40);
-            this.showPersonalButton.TabIndex = 9;
-            this.showPersonalButton.Text = "Мед. персонал";
-            this.showPersonalButton.UseVisualStyleBackColor = true;
-            this.showPersonalButton.Click += new System.EventHandler(this.showPersonalButton_Click);
             // 
             // deleteButton
             // 
@@ -56,7 +45,7 @@
             this.deleteButton.TabIndex = 8;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_ClickAsync);
             // 
             // addButton
             // 
@@ -80,61 +69,60 @@
             // 
             // objectListView
             // 
-            this.objectListView.AllColumns.Add(this.Название);
-            this.objectListView.AllColumns.Add(this.Адресс);
+            this.objectListView.AllColumns.Add(this.Имя);
+            this.objectListView.AllColumns.Add(this.Фамилия);
             this.objectListView.CellEditUseWholeCell = false;
             this.objectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Название,
-            this.Адресс});
+            this.Имя,
+            this.Фамилия});
             this.objectListView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView.Location = new System.Drawing.Point(132, 12);
+            this.objectListView.Location = new System.Drawing.Point(12, 12);
             this.objectListView.Name = "objectListView";
-            this.objectListView.Size = new System.Drawing.Size(681, 464);
+            this.objectListView.Size = new System.Drawing.Size(801, 464);
             this.objectListView.TabIndex = 5;
             this.objectListView.UseCompatibleStateImageBehavior = false;
             this.objectListView.View = System.Windows.Forms.View.Details;
             // 
-            // Название
+            // Фамилия
             // 
-            this.Название.AspectName = "Name";
-            this.Название.Groupable = false;
-            this.Название.IsEditable = false;
-            this.Название.Text = "Название";
-            this.Название.Width = 333;
+            this.Фамилия.AspectName = "LastName";
+            this.Фамилия.DisplayIndex = 0;
+            this.Фамилия.Groupable = false;
+            this.Фамилия.IsEditable = false;
+            this.Фамилия.Text = "Фамилия";
+            this.Фамилия.Width = 333;
             // 
-            // Адресс
+            // Имя
             // 
-            this.Адресс.AspectName = "Address";
-            this.Адресс.Groupable = false;
-            this.Адресс.IsEditable = false;
-            this.Адресс.Text = "Адресс";
-            this.Адресс.Width = 346;
+            this.Имя.AspectName = "FirstName";
+            this.Имя.DisplayIndex = 1;
+            this.Имя.Groupable = false;
+            this.Имя.IsEditable = false;
+            this.Имя.Text = "Имя";
+            this.Имя.Width = 346;
             // 
-            // DepartmentsForm
+            // EmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 488);
-            this.Controls.Add(this.showPersonalButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.objectListView);
-            this.Name = "DepartmentsForm";
-            this.Text = "DepartmentsForm";
+            this.Name = "EmployeesForm";
+            this.Text = "EmployeesForm";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button showPersonalButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private BrightIdeasSoftware.ObjectListView objectListView;
-        private BrightIdeasSoftware.OLVColumn Название;
-        private BrightIdeasSoftware.OLVColumn Адресс;
+        private BrightIdeasSoftware.OLVColumn Фамилия;
+        private BrightIdeasSoftware.OLVColumn Имя;
     }
 }

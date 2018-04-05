@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Department\DepartmentService.cs" />
     <Compile Include="Department\IDepartmentService.cs" />
+    <Compile Include="Employee\EmployeeService.cs" />
+    <Compile Include="Employee\IEmployeeService.cs" />
     <Compile Include="MapperConfig.cs" />
     <Compile Include="TherapeuticInstitutions\ITherapeuticInstitutionsService.cs" />
     <Compile Include="TherapeuticInstitutions\TherapeuticInstitutionsService.cs" />

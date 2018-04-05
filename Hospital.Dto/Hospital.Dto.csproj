@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DepartmentDto.cs" />
+    <Compile Include="EmployeeDto.cs" />
     <Compile Include="Input\CreateDepartmentInputDto.cs" />
+    <Compile Include="Input\CreateEmployeeInputDto.cs" />
     <Compile Include="Input\CreateInstitutionInputDto.cs" />
     <Compile Include="Input\EditDepartmentInputDto.cs" />
     <Compile Include="Input\EditInsitutionInputDto.cs" />

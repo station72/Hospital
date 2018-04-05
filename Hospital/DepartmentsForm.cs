@@ -133,5 +133,14 @@ namespace Hospital
             deleteButton.Enabled = isActive;
             showPersonalButton.Enabled = isActive;
         }
+
+        private void showPersonalButton_Click(object sender, EventArgs e)
+        {
+            if (_selected == null)
+                return;
+
+            var employeesForm = new EmployeesForm(_selected, _institution);
+            employeesForm.ShowDialog();
+        }
     }
 }
