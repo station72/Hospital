@@ -35,6 +35,7 @@
             this.objectListView = new BrightIdeasSoftware.ObjectListView();
             this.Название = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Адресс = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.detailsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             this.Адресс.Text = "Адресс";
             this.Адресс.Width = 346;
             // 
+            // detailsButton
+            // 
+            this.detailsButton.Location = new System.Drawing.Point(12, 59);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(114, 40);
+            this.detailsButton.TabIndex = 10;
+            this.detailsButton.Text = "Подробнее";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
             // DepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 488);
+            this.Controls.Add(this.detailsButton);
             this.Controls.Add(this.showPersonalButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
@@ -136,5 +148,6 @@
         private BrightIdeasSoftware.ObjectListView objectListView;
         private BrightIdeasSoftware.OLVColumn Название;
         private BrightIdeasSoftware.OLVColumn Адресс;
+        private System.Windows.Forms.Button detailsButton;
     }
 }

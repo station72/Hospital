@@ -5,11 +5,11 @@ namespace Hospital
 {
     public class BaseForm : Form
     {
-        public BaseForm()
-        {
-            //TODO: remove
-            CurrentUser = new UserDto { Id = 1, Login = "admin", Role = Data.Enums.UserRoles.Admin };
-        }
+        //public BaseForm()
+        //{
+        //    //TODO: remove
+        //    CurrentUser = new UserDto { Id = 1, Login = "admin", Role = Data.Enums.UserRoles.User };
+        //}
 
         protected static UserDto CurrentUser { get; set; }
 

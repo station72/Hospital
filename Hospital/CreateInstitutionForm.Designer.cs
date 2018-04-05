@@ -93,7 +93,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(105, 162);
+            this.createButton.Location = new System.Drawing.Point(105, 119);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(322, 53);
             this.createButton.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 245);
+            this.ClientSize = new System.Drawing.Size(514, 190);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.addressInput);
             this.Controls.Add(label2);
@@ -118,7 +118,7 @@
             this.Controls.Add(this.okpoInput);
             this.Controls.Add(okpoLabel);
             this.Name = "CreateInstitutionForm";
-            this.Text = "CreateInstitutionsForm";
+            this.Text = "Добавить учреждение";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

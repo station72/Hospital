@@ -160,7 +160,7 @@
             this.Controls.Add(this.patronymicInput);
             this.Controls.Add(okpoLabel);
             this.Name = "CreateEmployeeForm";
-            this.Text = "CreateEmployeeForm";
+            this.Text = "Добавить мед. работника";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

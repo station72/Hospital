@@ -18,8 +18,8 @@ namespace Hospital
 
             Mapper.Initialize(c => c.AddProfile(new MapperConfig()));
 
-            //Application.Run(new LoginForm());
-            Application.Run(new InstitutionsForm());
+            Application.Run(new LoginForm());
+            //Application.Run(new InstitutionsForm());
         }
     }
 }

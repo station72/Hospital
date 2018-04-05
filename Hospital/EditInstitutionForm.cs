@@ -1,5 +1,5 @@
-﻿using System;
-using Hospital.Common;
+﻿using Hospital.Common;
+using Hospital.Data.Enums;
 using Hospital.Dto;
 using Hospital.Dto.Input;
 using Hospital.Services.Institution;
@@ -18,14 +18,14 @@ namespace Hospital
             DisableResize();
             
             ControlBox = false;
-            InitFields(entity);
+            InitControls(entity);
 
             _entityId = entity.Id;
             _institutionsForm = institutionsForm;
             _institutionService = new TherapeuticInstitutionsService();
         }
 
-        private void InitFields(TherapeuticInstitutionDto entity)
+        private void InitControls(TherapeuticInstitutionDto entity)
         {
             addressInput.Text = entity.Address;
             okpoInput.Text = entity.OKPO;

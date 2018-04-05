@@ -35,6 +35,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.showDepartmentsButton = new System.Windows.Forms.Button();
+            this.detailButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             this.showDepartmentsButton.UseVisualStyleBackColor = true;
             this.showDepartmentsButton.Click += new System.EventHandler(this.showDepartmentsButton_Click);
             // 
+            // detailButton
+            // 
+            this.detailButton.Location = new System.Drawing.Point(12, 59);
+            this.detailButton.Name = "detailButton";
+            this.detailButton.Size = new System.Drawing.Size(114, 40);
+            this.detailButton.TabIndex = 5;
+            this.detailButton.Text = "Подробнее";
+            this.detailButton.UseVisualStyleBackColor = true;
+            this.detailButton.Click += new System.EventHandler(this.detailButton_Click);
+            // 
             // InstitutionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 488);
+            this.Controls.Add(this.detailButton);
             this.Controls.Add(this.showDepartmentsButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button showDepartmentsButton;
+        private System.Windows.Forms.Button detailButton;
     }
 }

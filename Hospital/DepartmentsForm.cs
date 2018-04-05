@@ -4,6 +4,7 @@ using Hospital.Helpers;
 using Hospital.Services.Department;
 using System;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hospital
 {
@@ -20,18 +21,27 @@ namespace Hospital
             InitializeComponent();
 
             _institution = institution;
+
             _listUpdateHelper = new ObjectListUpdateHelper();
 
             objectListView.MultiSelect = false;
             objectListView.FullRowSelect = true;
             objectListView.SelectedIndexChanged += ObjectListView_SelectedIndexChanged;
 
-            editButton.Enabled = false;
-            deleteButton.Enabled = false;
+            SetEnabledSelectedItemButton(false);
 
             _departmentService = new DepartmentService();
 
             InitControls();
+
+        }
+
+        void SetEnabledSelectedItemButton(bool isEnabled)
+        {
+            editButton.Enabled = isEnabled;
+            deleteButton.Enabled = isEnabled;
+            showPersonalButton.Enabled = isEnabled;
+            detailsButton.Enabled = isEnabled;
         }
 
         //TODO: move to helper
@@ -42,30 +52,34 @@ namespace Hospital
 
             if (item == null)
             {
-                editButton.Enabled = false;
-                deleteButton.Enabled = false;
-                showPersonalButton.Enabled = false;
+                SetEnabledSelectedItemButton(false);
                 return;
             }
 
-            editButton.Enabled = true;
-            deleteButton.Enabled = true;
-            showPersonalButton.Enabled = true;
+            SetEnabledSelectedItemButton(true);
         }
 
         private void InitControls()
         {
+            Text = $"Отделения леч. учреждения {_institution.Name}";
+
             if (CurrentUser.Role == UserRoles.User)
             {
                 addButton.Visible = false;
                 editButton.Visible = false;
                 deleteButton.Visible = false;
             }
+            else
+            {
+                detailsButton.Visible = false;
+            }
 
+            Cursor = Cursors.WaitCursor;
             Task.Run(async () =>
             {
                 var list = await _departmentService.GetListAsync(_institution.Id);
                 objectListView.SetObjects(list);
+                Cursor = Cursors.Default;
             });
         }
 
@@ -128,6 +142,7 @@ namespace Hospital
         private void SetUiActivity(bool isActive)
         {
             objectListView.Enabled = isActive;
+
             addButton.Enabled = isActive;
             editButton.Enabled = isActive;
             deleteButton.Enabled = isActive;
@@ -141,6 +156,15 @@ namespace Hospital
 
             var employeesForm = new EmployeesForm(_selected, _institution);
             employeesForm.ShowDialog();
+        }
+
+        private void detailsButton_Click(object sender, EventArgs e)
+        {
+            if (_selected == null)
+                return;
+
+            var form = new DetailsDepartmentForm(_selected);
+            form.ShowDialog();
         }
     }
 }
