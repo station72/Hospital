@@ -45,6 +45,7 @@
     <Compile Include="Input\CreateEmployeeInputDto.cs" />
     <Compile Include="Input\CreateInstitutionInputDto.cs" />
     <Compile Include="Input\EditDepartmentInputDto.cs" />
+    <Compile Include="Input\EditEmployeeDto.cs" />
     <Compile Include="Input\EditInsitutionInputDto.cs" />
     <Compile Include="TherapeuticInstitutionDto.cs" />
     <Compile Include="UserDto.cs" />

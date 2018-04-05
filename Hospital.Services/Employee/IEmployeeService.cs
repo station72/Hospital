@@ -7,10 +7,12 @@ namespace Hospital.Services.Employee
 {
     public interface IEmployeeService
     {
-        Task<IEnumerable<EmployeeDto>> GetListAsync();
+        Task<IEnumerable<EmployeeDto>> GetListAsync(int? departmentId);
 
         Task DeleteAsync(int id);
 
         Task<EmployeeDto> CreateNewAsync(CreateEmployeeInputDto createEmployeeInputDto);
+
+        Task<EmployeeDto> EditAsync(EditEmployeeDto inputDto);
     }
 }

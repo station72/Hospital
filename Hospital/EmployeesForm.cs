@@ -69,7 +69,7 @@ namespace Hospital
             Cursor = Cursors.WaitCursor;
             Task.Run(async () =>
             {
-                var result = await _employeeService.GetListAsync();
+                var result = await _employeeService.GetListAsync(_department.Id);
                 objectListView.SetObjects(result);
                 Cursor = Cursors.Default;
             });
@@ -77,19 +77,22 @@ namespace Hospital
 
         internal void EditEntityInList(EmployeeDto editedEntity)
         {
-            _selected = editedEntity;
-            BeginInvoke(new Action(() =>
+            if (editedEntity.DepartmentId != _department.Id)
             {
-                _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
-            }));
+                objectListView.RemoveObject(_selected);
+                _selected = null;
+                return;
+            }
+            _selected = editedEntity;
+            _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 
         internal void AddEntityToList(EmployeeDto newItem)
         {
-            BeginInvoke(new Action(()=> 
+            BeginInvoke(new Action(() =>
             {
                 objectListView.AddObject(newItem);
-            })) ;
+            }));
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -103,6 +106,7 @@ namespace Hospital
             if (_selected == null)
                 return;
 
+            _selected.Department = _department;
             var editForm = new EditEmployeeForm(_selected, this);
             editForm.ShowDialog();
         }

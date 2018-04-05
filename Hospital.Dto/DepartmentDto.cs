@@ -15,5 +15,10 @@ namespace Hospital.Dto
         public int TherapeuticInstitutionsId { get; set; }
 
         public TherapeuticInstitutionDto TherapeuticInstitution { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

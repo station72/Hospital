@@ -48,10 +48,38 @@ namespace Hospital.Services.Employee
             await _dc.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<EmployeeDto>> GetListAsync()
+        public async Task<EmployeeDto> EditAsync(EditEmployeeDto inputDto)
+        {
+            var entity = await _dc.Employees
+                .FirstOrDefaultAsync(u => u.Id == inputDto.Id && !u.IsDeleted);
+
+            if (entity == null)
+                throw new HospitalException($"Сущность с id = {inputDto.Id} не найдена!");
+
+            var department = await _dc.Departments
+                .FirstOrDefaultAsync(u => u.Id == inputDto.DepartmentId && !u.IsDeleted);
+
+            if (department == null)
+                throw new HospitalException($"Отделение с id = {inputDto.DepartmentId} не найдена!");
+
+            entity.Cabinet = inputDto.Cabinet;
+            entity.DepartmentId = inputDto.DepartmentId;
+            entity.FirstName = inputDto.FirstName;
+            entity.LastName = inputDto.LastName;
+            entity.Patronymic = inputDto.Patronymic;
+            entity.Schedule = inputDto.Patronymic;
+
+            await _dc.SaveChangesAsync();
+
+            var mappedEntity = Mapper.Map<EmployeeDto>(entity);
+            return mappedEntity;
+        }
+
+        public async Task<IEnumerable<EmployeeDto>> GetListAsync(int? departmentId)
         {
             var entityList = await _dc.Employees
                 .AsNoTracking()
+                .Where(u => !departmentId.HasValue || u.DepartmentId == departmentId)
                 .Where(u => !u.IsDeleted)
                 .ToArrayAsync();
 
