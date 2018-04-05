@@ -2,7 +2,6 @@
 using Hospital.Dto.Input;
 using Hospital.Services.Department;
 using System;
-using System.Windows.Forms;
 
 namespace Hospital
 {
@@ -28,21 +27,21 @@ namespace Hospital
             var okpo = profileInput.Text;
             if (string.IsNullOrWhiteSpace(okpo))
             {
-                errorProvider.SetError(profileInput, "Поле обязательно для ввода");
+                errorProvider.SetError(profileInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             var name = nameInput.Text;
             if (string.IsNullOrWhiteSpace(name))
             {
-                errorProvider.SetError(nameInput, "Поле обязательно для ввода");
+                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             var address = addressInput.Text;
             if (string.IsNullOrWhiteSpace(address))
             {
-                errorProvider.SetError(addressInput, "Поле обязательно для ввода");
+                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 

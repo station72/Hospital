@@ -77,19 +77,19 @@ namespace Hospital
 
             if (string.IsNullOrWhiteSpace(firstNameInput.Text))
             {
-                errorProvider.SetError(firstNameInput, "Поле обязательно для ввода");
+                errorProvider.SetError(firstNameInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(secondNameInput.Text))
             {
-                errorProvider.SetError(secondNameInput, "Поле обязательно для ввода");
+                errorProvider.SetError(secondNameInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(patronymicInput.Text))
             {
-                errorProvider.SetError(patronymicInput, "Поле обязательно для ввода");
+                errorProvider.SetError(patronymicInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 

@@ -30,14 +30,14 @@ namespace Hospital
             var password = PassInput.Text;
             if (string.IsNullOrWhiteSpace(password))
             {
-                errorProvider.SetError(PassInput, "Зполните поле");
+                errorProvider.SetError(PassInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             var login = UserNameInput.Text;
             if (string.IsNullOrWhiteSpace(login))
             {
-                errorProvider.SetError(UserNameInput, "Зполните поле");
+                errorProvider.SetError(UserNameInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 

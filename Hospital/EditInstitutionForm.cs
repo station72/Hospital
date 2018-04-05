@@ -1,5 +1,4 @@
 ﻿using Hospital.Common;
-using Hospital.Data.Enums;
 using Hospital.Dto;
 using Hospital.Dto.Input;
 using Hospital.Services.Institution;
@@ -15,7 +14,6 @@ namespace Hospital
         public EditInstitutionForm(TherapeuticInstitutionDto entity, InstitutionsForm institutionsForm)
         {
             InitializeComponent();
-            DisableResize();
             
             ControlBox = false;
             InitControls(entity);
@@ -37,19 +35,19 @@ namespace Hospital
             var isValid = true;
             if (string.IsNullOrWhiteSpace(okpoInput.Text))
             {
-                errorProvider.SetError(okpoInput, "Поле обязательно для ввода");
+                errorProvider.SetError(okpoInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(nameInput.Text))
             {
-                errorProvider.SetError(nameInput, "Поле обязательно для ввода");
+                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(addressInput.Text))
             {
-                errorProvider.SetError(addressInput, "Поле обязательно для ввода");
+                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
                 isValid = false;
             }
 
