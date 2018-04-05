@@ -129,7 +129,7 @@ namespace Hospital
             if (_selected == null)
                 return;
 
-            var deparmentsForm = new DepartmentsForm(_selected.Id);
+            var deparmentsForm = new DepartmentsForm(_selected);
             deparmentsForm.ShowDialog();
         }
     }

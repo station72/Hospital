@@ -2,7 +2,11 @@
 using Hospital.Dto;
 using Hospital.Dto.Input;
 using Hospital.Services.Department;
+using Hospital.Services.Institution;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hospital
@@ -10,19 +14,53 @@ namespace Hospital
     public partial class EditDepartmentForm : Form
     {
         private readonly int _entityId;
-        private readonly int _institutionId;
+        private int _institutionId;
         private readonly IDepartmentService _departmentService;
+        private readonly ITherapeuticInstitutionsService _institutionService;
         private readonly DepartmentsForm _departmentsForm;
 
-        public EditDepartmentForm(DepartmentDto entity, DepartmentsForm departmentsForm)
+        public EditDepartmentForm(
+            DepartmentDto entity,
+            DepartmentsForm departmentsForm)
         {
             _entityId = entity.Id;
             _institutionId = entity.TherapeuticInstitutionsId;
             _departmentService = new DepartmentService();
+            _institutionService = new TherapeuticInstitutionsService();
             _departmentsForm = departmentsForm;
 
             InitializeComponent();
             InitFields(entity);
+            InitAutoComlete(entity.TherapeuticInstitution);
+        }
+
+        private void InitAutoComlete(TherapeuticInstitutionDto currentInstitution)
+        {
+            suggestInstitutionInput.AllowDrop = true;
+            suggestInstitutionInput.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            suggestInstitutionInput.Enabled = false;
+            suggestInstitutionInput.DataSource = new List<TherapeuticInstitutionDto> { currentInstitution };
+            Task.Run(async () =>
+            {
+                var items = (await _institutionService.GetListAsync()).ToList();
+
+                suggestInstitutionInput.BeginInvoke(new Action(() =>
+                {
+                    suggestInstitutionInput.DataSource = items;
+                    suggestInstitutionInput.Enabled = true;
+                    suggestInstitutionInput.SelectedItem = items.First(u => u.Id == currentInstitution.Id);
+                }));
+            });
+
+            suggestInstitutionInput.SelectedValueChanged += (s, a) =>
+            {
+                var currentInstituition = suggestInstitutionInput.SelectedItem as TherapeuticInstitutionDto;
+                if (currentInstituition == null)
+                    return;
+
+                _institutionId = currentInstituition.Id;
+            };
         }
 
         private void InitFields(DepartmentDto entity)

@@ -11,5 +11,10 @@ namespace Hospital.Dto
         public string Address { get; set; }
 
         public string OKPO { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

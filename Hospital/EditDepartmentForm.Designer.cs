@@ -38,6 +38,8 @@
             this.profileInput = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cancelButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.suggestInstitutionInput = new System.Windows.Forms.ComboBox();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             okpoLabel = new System.Windows.Forms.Label();
@@ -116,11 +118,30 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Учреждение";
+            // 
+            // suggestInstitutionInput
+            // 
+            this.suggestInstitutionInput.FormattingEnabled = true;
+            this.suggestInstitutionInput.Location = new System.Drawing.Point(128, 126);
+            this.suggestInstitutionInput.Name = "suggestInstitutionInput";
+            this.suggestInstitutionInput.Size = new System.Drawing.Size(322, 21);
+            this.suggestInstitutionInput.TabIndex = 24;
+            // 
             // EditDepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 245);
+            this.Controls.Add(this.suggestInstitutionInput);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addressInput);
@@ -145,5 +166,7 @@
         private System.Windows.Forms.TextBox profileInput;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox suggestInstitutionInput;
     }
 }

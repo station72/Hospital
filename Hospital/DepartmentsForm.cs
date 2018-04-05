@@ -10,16 +10,16 @@ namespace Hospital
     public partial class DepartmentsForm : BaseForm
     {
         private readonly IDepartmentService _departmentService;
-        private readonly int _institutionId;
+        private readonly TherapeuticInstitutionDto _institution;
         private readonly IObjectListUpdateHelper _listUpdateHelper;
 
         private DepartmentDto _selected;
 
-        public DepartmentsForm(int institutionId)
+        public DepartmentsForm(TherapeuticInstitutionDto institution)
         {
             InitializeComponent();
 
-            _institutionId = institutionId;
+            _institution = institution;
             _listUpdateHelper = new ObjectListUpdateHelper();
 
             objectListView.MultiSelect = false;
@@ -64,20 +64,26 @@ namespace Hospital
 
             Task.Run(async () =>
             {
-                var list = await _departmentService.GetListAsync(_institutionId);
+                var list = await _departmentService.GetListAsync(_institution.Id);
                 objectListView.SetObjects(list);
             });
         }
 
         internal void EditEntityInList(DepartmentDto editedEntity)
         {
+            if (editedEntity.TherapeuticInstitutionsId != _institution.Id)
+            {
+                objectListView.RemoveObject(_selected);
+                _selected = null;
+                return;
+            }
             _selected = editedEntity;
             _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var createForm = new CreateDepartmentForm(this, _institutionId);
+            var createForm = new CreateDepartmentForm(this, _institution.Id);
             createForm.ShowDialog();
         }
 
@@ -86,6 +92,7 @@ namespace Hospital
             if (_selected == null)
                 return;
 
+            _selected.TherapeuticInstitution = _institution;
             var editForm = new EditDepartmentForm(_selected, this);
             editForm.ShowDialog();
         }
