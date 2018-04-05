@@ -1,106 +1,79 @@
-﻿using Hospital.Dto;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Hospital.Dto.Input;
+﻿using AutoMapper;
 using Hospital.Common;
+using Hospital.Data;
+using Hospital.Data.Model;
+using Hospital.Dto;
+using Hospital.Dto.Input;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Hospital.Services.TherapeuticInstitutions
+namespace Hospital.Services.Institution
 {
     public class TherapeuticInstitutionsService : ITherapeuticInstitutionsService
     {
+        private readonly HospitalDbContext _dc;
+
+        public TherapeuticInstitutionsService()
+        {
+            _dc = new HospitalDbContext();
+        }
+
         public async Task<TherapeuticInstitutionDto> CreateNewAsync(CreateInstitutionInputDto input)
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));
-
-            if (input.Name == "a")
+            var addedEntity = _dc.TherapeuticInstitutions.Add(new TherapeuticInstitutions
             {
-                throw new HospitalException("Такой уже есть!!!");
-            }
-
-            return new TherapeuticInstitutionDto
-            {
-                Id = 11,
                 Address = input.Address,
                 Name = input.Name,
                 OKPO = input.OKPO
-            };
+            });
+
+            await _dc.SaveChangesAsync();
+
+            var result = Mapper.Map<TherapeuticInstitutionDto>(addedEntity);
+            return result;
         }
 
         public async Task DeleteAsync(int id)
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));
-            return;
+            var entity = await _dc.TherapeuticInstitutions
+                .FirstOrDefaultAsync(u => u.Id == id && !u.IsDeleted);
+
+            if (entity == null)
+                throw new HospitalException($"Сущность с id = {id} не найдена!");
+
+            entity.IsDeleted = true;
+
+            await _dc.SaveChangesAsync();
         }
 
         public async Task<TherapeuticInstitutionDto> EditAsync(EditInsitutionInputDto input)
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            var entity = await _dc.TherapeuticInstitutions
+                .FirstOrDefaultAsync(u => u.Id == input.Id && !u.IsDeleted);
 
-            if (input.Name == "a")
-            {
-                throw new HospitalException("Такое имя уже есть");
-            }
+            if (entity == null)
+                throw new HospitalException($"Сущность с id = {input.Id} не найдена!");
 
-            return new TherapeuticInstitutionDto
-            {
-                Id = input.Id,
-                Address = input.Address,
-                Name = input.Name,
-                OKPO = input.OKPO
-            };
+            entity.Address = input.Address;
+            entity.Name = input.Name;
+            entity.OKPO = input.OKPO;
+
+            await _dc.SaveChangesAsync();
+
+            var mappedEntity = Mapper.Map<TherapeuticInstitutionDto>(entity);
+            return mappedEntity;
         }
 
-        //TODO: add paging
-        public async Task<IEnumerable<TherapeuticInstitutionDto>> GetInstitutionsAsync()
+        public async Task<IEnumerable<TherapeuticInstitutionDto>> GetListAsync()
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            var list = await _dc.TherapeuticInstitutions
+                .Where(u => !u.IsDeleted)
+                .ToListAsync();
 
-            return new List<TherapeuticInstitutionDto>
-            {
-                new TherapeuticInstitutionDto
-                {
-                    Id = 1,
-                    Name = "Name1",
-                    Address = "Address1"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 2,
-                    Name = "Name2",
-                    Address = "Address2"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 3,
-                    Name = "Name3",
-                    Address = "Address3"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 4,
-                    Name = "Name4",
-                    Address = "Address4"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 5,
-                    Name = "Name5",
-                    Address = "Address5"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 6,
-                    Name = "Name6",
-                    Address = "Address6"
-                },
-                new TherapeuticInstitutionDto
-                {
-                    Id = 7,
-                    Name = "Name7",
-                    Address = "Address7"
-                },
-            };
+            var mappedList = list.Select(Mapper.Map<TherapeuticInstitutionDto>);
+            return mappedList;
         }
     }
 }

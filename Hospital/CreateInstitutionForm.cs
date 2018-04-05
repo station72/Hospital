@@ -1,6 +1,6 @@
 ﻿using Hospital.Common;
 using Hospital.Dto.Input;
-using Hospital.Services.TherapeuticInstitutions;
+using Hospital.Services.Institution;
 using System;
 using System.Windows.Forms;
 
@@ -74,12 +74,12 @@ namespace Hospital
                 {
                     OKPO = okpoInput.Text,
                     Address = addressInput.Text,
-                    Name = addressInput.Text
+                    Name = nameInput.Text
                 });
 
                 _parentForm.AddInsitutionToList(newItem);
 
-                this.Close();
+                Close();
             }
             catch (HospitalException ex)
             {
@@ -89,41 +89,6 @@ namespace Hospital
             {
                 SetUiActivity(true);
             }
-        }
-
-        private void CreateInstitutionForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void okpoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void okpoInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nameInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addressInput_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

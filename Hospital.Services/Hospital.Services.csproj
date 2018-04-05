@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Department\DepartmentService.cs" />
     <Compile Include="Department\IDepartmentService.cs" />
+    <Compile Include="MapperConfig.cs" />
     <Compile Include="TherapeuticInstitutions\ITherapeuticInstitutionsService.cs" />
     <Compile Include="TherapeuticInstitutions\TherapeuticInstitutionsService.cs" />
     <Compile Include="User\IUserService.cs" />
@@ -60,6 +66,9 @@
       <Project>{E074FF72-F055-4A28-8160-6265CF185E6F}</Project>
       <Name>Hospital.Dto</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

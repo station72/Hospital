@@ -3,7 +3,6 @@ using Hospital.Dto;
 using Hospital.Helpers;
 using Hospital.Services.Department;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Hospital
@@ -72,6 +71,7 @@ namespace Hospital
 
         internal void EditEntityInList(DepartmentDto editedEntity)
         {
+            _selected = editedEntity;
             _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 

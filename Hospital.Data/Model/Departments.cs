@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Hospital.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hospital.Data.Model
 {
-    public class Departments
+    public class Departments : IDeletable
     {
         public int Id { get; set; }
 
@@ -13,6 +14,8 @@ namespace Hospital.Data.Model
         public int TherapeuticInstitutionsId { get; set; }
 
         public string Address { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         [ForeignKey(nameof(TherapeuticInstitutionsId))]
         public TherapeuticInstitutions TherapeuticInstitution { get; set; }

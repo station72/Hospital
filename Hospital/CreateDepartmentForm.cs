@@ -77,7 +77,7 @@ namespace Hospital
                 var newItem = await _departmentService.CreateNewAsync(new CreateDepartmentInputDto
                 {
                     Address = addressInput.Text,
-                    Name = addressInput.Text,
+                    Name = nameInput.Text,
                     Profile = profileInput.Text,
                     TherapeuticInstitutionsId = _therapeuticInstitutionId
                 });

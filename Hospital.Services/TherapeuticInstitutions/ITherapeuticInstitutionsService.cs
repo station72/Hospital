@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Hospital.Dto.Input;
 
-namespace Hospital.Services.TherapeuticInstitutions
+namespace Hospital.Services.Institution
 {
     public interface ITherapeuticInstitutionsService
     {
-        Task<IEnumerable<TherapeuticInstitutionDto>> GetInstitutionsAsync();
+        Task<IEnumerable<TherapeuticInstitutionDto>> GetListAsync();
 
         Task DeleteAsync(int id);
 

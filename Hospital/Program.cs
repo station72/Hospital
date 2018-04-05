@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Hospital.Services;
+using System;
 using System.Windows.Forms;
 
 namespace Hospital
@@ -16,6 +15,9 @@ namespace Hospital
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Mapper.Initialize(c => c.AddProfile(new MapperConfig()));
+
             //Application.Run(new LoginForm());
             Application.Run(new InstitutionsForm());
         }

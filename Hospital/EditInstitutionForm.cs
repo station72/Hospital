@@ -2,7 +2,7 @@
 using Hospital.Common;
 using Hospital.Dto;
 using Hospital.Dto.Input;
-using Hospital.Services.TherapeuticInstitutions;
+using Hospital.Services.Institution;
 
 namespace Hospital
 {

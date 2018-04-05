@@ -1,6 +1,6 @@
 ﻿using Hospital.Dto;
 using Hospital.Helpers;
-using Hospital.Services.TherapeuticInstitutions;
+using Hospital.Services.Institution;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -69,7 +69,7 @@ namespace Hospital
             Cursor = Cursors.WaitCursor;
             Task.Run(async () =>
             {
-                var result = await _institutionsService.GetInstitutionsAsync();
+                var result = await _institutionsService.GetListAsync();
                 objectListView.SetObjects(result);
                 Cursor = Cursors.Default;
             });
@@ -100,6 +100,7 @@ namespace Hospital
 
         internal void EditEntityInList(TherapeuticInstitutionDto editedEntity)
         {
+            _selected = editedEntity;
             _listUpdateHelper.EditEntityInList(editedEntity, objectListView);
         }
 
@@ -129,7 +130,7 @@ namespace Hospital
                 return;
 
             var deparmentsForm = new DepartmentsForm(_selected.Id);
-            deparmentsForm.Show();
+            deparmentsForm.ShowDialog();
         }
     }
 }

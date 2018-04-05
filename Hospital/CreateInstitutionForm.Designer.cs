@@ -51,7 +51,6 @@
             okpoLabel.Size = new System.Drawing.Size(38, 13);
             okpoLabel.TabIndex = 0;
             okpoLabel.Text = "ОКПО";
-            okpoLabel.Click += new System.EventHandler(this.okpoLabel_Click);
             // 
             // label1
             // 
@@ -61,7 +60,6 @@
             label1.Size = new System.Drawing.Size(57, 13);
             label1.TabIndex = 2;
             label1.Text = "Название";
-            label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -71,7 +69,6 @@
             label2.Size = new System.Drawing.Size(38, 13);
             label2.TabIndex = 4;
             label2.Text = "Адрес";
-            label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // okpoInput
             // 
@@ -79,7 +76,6 @@
             this.okpoInput.Name = "okpoInput";
             this.okpoInput.Size = new System.Drawing.Size(322, 20);
             this.okpoInput.TabIndex = 1;
-            this.okpoInput.TextChanged += new System.EventHandler(this.okpoInput_TextChanged);
             // 
             // nameInput
             // 
@@ -87,7 +83,6 @@
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(322, 20);
             this.nameInput.TabIndex = 3;
-            this.nameInput.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
             // 
             // addressInput
             // 
@@ -95,7 +90,6 @@
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(322, 20);
             this.addressInput.TabIndex = 5;
-            this.addressInput.TextChanged += new System.EventHandler(this.addressInput_TextChanged);
             // 
             // createButton
             // 
@@ -125,7 +119,6 @@
             this.Controls.Add(okpoLabel);
             this.Name = "CreateInstitutionForm";
             this.Text = "CreateInstitutionsForm";
-            this.Load += new System.EventHandler(this.CreateInstitutionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

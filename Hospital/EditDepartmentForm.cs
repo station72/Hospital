@@ -10,12 +10,14 @@ namespace Hospital
     public partial class EditDepartmentForm : Form
     {
         private readonly int _entityId;
+        private readonly int _institutionId;
         private readonly IDepartmentService _departmentService;
         private readonly DepartmentsForm _departmentsForm;
 
         public EditDepartmentForm(DepartmentDto entity, DepartmentsForm departmentsForm)
         {
             _entityId = entity.Id;
+            _institutionId = entity.TherapeuticInstitutionsId;
             _departmentService = new DepartmentService();
             _departmentsForm = departmentsForm;
 
@@ -45,7 +47,8 @@ namespace Hospital
                     Id = _entityId,
                     Address = addressInput.Text,
                     Name = nameInput.Text,
-                    Profile = profileInput.Text
+                    Profile = profileInput.Text,
+                    TherapeuticInstitutionsId = _institutionId
                 };
 
                 var editedEntity = await _departmentService.EditAsync(inputDto);
