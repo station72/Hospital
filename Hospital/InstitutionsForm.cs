@@ -89,7 +89,7 @@ namespace Hospital
             try
             {
                 SetUiActivity(false);
-                
+
                 await _institutionsService.DeleteAsync(_selected.Id);
 
                 objectListView.RemoveObject(_selected);

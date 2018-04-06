@@ -89,7 +89,7 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +99,7 @@
             this.Controls.Add(this.UserNameInput);
             this.Controls.Add(this.EnterButton);
             this.Controls.Add(UserLabel);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

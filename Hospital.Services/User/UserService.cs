@@ -3,6 +3,7 @@ using Hospital.Common;
 using Hospital.Data;
 using Hospital.Dto;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Hospital.Services.User
@@ -16,12 +17,11 @@ namespace Hospital.Services.User
             _dc = new HospitalDbContext();
         }
 
-        public async Task<UserDto> Enter(string login, string password)
+        public async Task<UserDto> EnterAsync(string login, string password)
         {
             var user =  await _dc.Users
                 .AsNoTracking()
                 .FirstOrDefaultAsync(u => u.Login == login && u.Password == u.Password);
-
             if (user == null)
                 throw new HospitalException("Неверный логин или пароль!");
 

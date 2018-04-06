@@ -5,6 +5,6 @@ namespace Hospital.Services.User
 {
     public interface IUserService
     {
-        Task<UserDto> Enter(string login, string password);
+        Task<UserDto> EnterAsync(string login, string password);
     }
 }

@@ -1,67 +1,65 @@
 ﻿using Hospital.Common;
+using Hospital.Helpers;
 using Hospital.Services.User;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hospital
 {
     public partial class LoginForm : BaseForm
     {
         private readonly IUserService _userService;
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
 
         public LoginForm()
         {
             InitializeComponent();
             _userService = new UserService();
+
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
+            {
+                PassInput, UserNameInput
+            });
         }
 
-        private void SetUiActivity(bool activity)
+        private void SetUiActivity(bool isActive)
         {
             if (IsDisposed)
                 return;
 
-            PassInput.ReadOnly = !activity;
-            UserNameInput.ReadOnly = !activity;
-            EnterButton.Enabled = activity;
-        }
-
-        private bool Validation()
-        {
-            var isValid = true;
-            var password = PassInput.Text;
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                errorProvider.SetError(PassInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            var login = UserNameInput.Text;
-            if (string.IsNullOrWhiteSpace(login))
-            {
-                errorProvider.SetError(UserNameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
+            PassInput.Enabled = isActive;
+            UserNameInput.Enabled = isActive;
+            EnterButton.Enabled = isActive;
         }
 
         private async void EnterButton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
 
-            var isValid = Validation();
-            if (!isValid)
+            if (!_validHelper.Validate())
                 return;
 
             try
             {
                 SetUiActivity(false);
 
-                var user = await _userService.Enter(UserNameInput.Text, PassInput.Text);
-                CurrentUser = user;
+                await Task.Run(async () =>
+                {
+                    var user = await _userService.EnterAsync(UserNameInput.Text, PassInput.Text);
+                    CurrentUser = user;
+                    
+                }).ContinueWith((a)=> 
+                {
+                    BeginInvoke(new Action(() =>
+                    {
+                        Hide();
+                        var instForm = new InstitutionsForm();
+                        instForm.Show();
+                    }));
+                });
 
-                Hide();
-                var instForm = new InstitutionsForm();
-                instForm.Show();
             }
             catch (HospitalException ex)
             {
