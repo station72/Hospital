@@ -99,7 +99,7 @@
             this.Controls.Add(this.profileInput);
             this.Controls.Add(okpoLabel);
             this.Name = "DetailsDepartmentForm";
-            this.Text = "DetailsDepartmentForm";
+            this.Text = "Инфо отделения";
             this.ResumeLayout(false);
             this.PerformLayout();
 

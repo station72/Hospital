@@ -99,7 +99,7 @@
             this.Controls.Add(this.okpoInput);
             this.Controls.Add(okpoLabel);
             this.Name = "DetailInstitutionForm";
-            this.Text = "DetailInstitutionForm";
+            this.Text = "Инфо лечебного учреждения";
             this.ResumeLayout(false);
             this.PerformLayout();
 

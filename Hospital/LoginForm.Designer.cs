@@ -43,7 +43,7 @@
             // UserLabel
             // 
             UserLabel.AutoSize = true;
-            UserLabel.Location = new System.Drawing.Point(43, 59);
+            UserLabel.Location = new System.Drawing.Point(49, 28);
             UserLabel.Name = "UserLabel";
             UserLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             UserLabel.Size = new System.Drawing.Size(80, 13);
@@ -53,7 +53,7 @@
             // PassLabel
             // 
             PassLabel.AutoSize = true;
-            PassLabel.Location = new System.Drawing.Point(43, 94);
+            PassLabel.Location = new System.Drawing.Point(84, 70);
             PassLabel.Name = "PassLabel";
             PassLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             PassLabel.Size = new System.Drawing.Size(45, 13);
@@ -63,7 +63,7 @@
             // EnterButton
             // 
             this.EnterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnterButton.Location = new System.Drawing.Point(138, 134);
+            this.EnterButton.Location = new System.Drawing.Point(144, 107);
             this.EnterButton.Name = "EnterButton";
             this.EnterButton.Size = new System.Drawing.Size(311, 58);
             this.EnterButton.TabIndex = 2;
@@ -73,14 +73,14 @@
             // 
             // UserNameInput
             // 
-            this.UserNameInput.Location = new System.Drawing.Point(138, 52);
+            this.UserNameInput.Location = new System.Drawing.Point(144, 25);
             this.UserNameInput.Name = "UserNameInput";
             this.UserNameInput.Size = new System.Drawing.Size(311, 20);
             this.UserNameInput.TabIndex = 0;
             // 
             // PassInput
             // 
-            this.PassInput.Location = new System.Drawing.Point(138, 94);
+            this.PassInput.Location = new System.Drawing.Point(144, 67);
             this.PassInput.Name = "PassInput";
             this.PassInput.Size = new System.Drawing.Size(311, 20);
             this.PassInput.TabIndex = 1;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.EnterButton);
             this.Controls.Add(UserLabel);
             this.Name = "LoginForm";
-            this.Text = "Login";
+            this.Text = "Вход";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

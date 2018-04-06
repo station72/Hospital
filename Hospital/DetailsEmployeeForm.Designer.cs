@@ -45,13 +45,6 @@
             okpoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cabinetInput
-            // 
-            this.cabinetInput.Location = new System.Drawing.Point(114, 119);
-            this.cabinetInput.Name = "cabinetInput";
-            this.cabinetInput.Size = new System.Drawing.Size(322, 20);
-            this.cabinetInput.TabIndex = 45;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -60,13 +53,6 @@
             label3.Size = new System.Drawing.Size(49, 13);
             label3.TabIndex = 44;
             label3.Text = "Кабинет";
-            // 
-            // scheduleInput
-            // 
-            this.scheduleInput.Location = new System.Drawing.Point(114, 155);
-            this.scheduleInput.Name = "scheduleInput";
-            this.scheduleInput.Size = new System.Drawing.Size(322, 20);
-            this.scheduleInput.TabIndex = 43;
             // 
             // label4
             // 
@@ -77,13 +63,6 @@
             label4.TabIndex = 42;
             label4.Text = "График работы";
             // 
-            // secondNameInput
-            // 
-            this.secondNameInput.Location = new System.Drawing.Point(114, 46);
-            this.secondNameInput.Name = "secondNameInput";
-            this.secondNameInput.Size = new System.Drawing.Size(322, 20);
-            this.secondNameInput.TabIndex = 41;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -92,13 +71,6 @@
             label2.Size = new System.Drawing.Size(56, 13);
             label2.TabIndex = 40;
             label2.Text = "Фамилия";
-            // 
-            // firstNameInput
-            // 
-            this.firstNameInput.Location = new System.Drawing.Point(114, 12);
-            this.firstNameInput.Name = "firstNameInput";
-            this.firstNameInput.Size = new System.Drawing.Size(322, 20);
-            this.firstNameInput.TabIndex = 39;
             // 
             // label1
             // 
@@ -109,13 +81,6 @@
             label1.TabIndex = 38;
             label1.Text = "Имя";
             // 
-            // patronymicInput
-            // 
-            this.patronymicInput.Location = new System.Drawing.Point(114, 82);
-            this.patronymicInput.Name = "patronymicInput";
-            this.patronymicInput.Size = new System.Drawing.Size(322, 20);
-            this.patronymicInput.TabIndex = 37;
-            // 
             // okpoLabel
             // 
             okpoLabel.AutoSize = true;
@@ -124,6 +89,41 @@
             okpoLabel.Size = new System.Drawing.Size(54, 13);
             okpoLabel.TabIndex = 36;
             okpoLabel.Text = "Отчество";
+            // 
+            // cabinetInput
+            // 
+            this.cabinetInput.Location = new System.Drawing.Point(114, 119);
+            this.cabinetInput.Name = "cabinetInput";
+            this.cabinetInput.Size = new System.Drawing.Size(322, 20);
+            this.cabinetInput.TabIndex = 45;
+            // 
+            // scheduleInput
+            // 
+            this.scheduleInput.Location = new System.Drawing.Point(114, 155);
+            this.scheduleInput.Name = "scheduleInput";
+            this.scheduleInput.Size = new System.Drawing.Size(322, 20);
+            this.scheduleInput.TabIndex = 43;
+            // 
+            // secondNameInput
+            // 
+            this.secondNameInput.Location = new System.Drawing.Point(114, 46);
+            this.secondNameInput.Name = "secondNameInput";
+            this.secondNameInput.Size = new System.Drawing.Size(322, 20);
+            this.secondNameInput.TabIndex = 41;
+            // 
+            // firstNameInput
+            // 
+            this.firstNameInput.Location = new System.Drawing.Point(114, 12);
+            this.firstNameInput.Name = "firstNameInput";
+            this.firstNameInput.Size = new System.Drawing.Size(322, 20);
+            this.firstNameInput.TabIndex = 39;
+            // 
+            // patronymicInput
+            // 
+            this.patronymicInput.Location = new System.Drawing.Point(114, 82);
+            this.patronymicInput.Name = "patronymicInput";
+            this.patronymicInput.Size = new System.Drawing.Size(322, 20);
+            this.patronymicInput.TabIndex = 37;
             // 
             // DetailsEmployeeForm
             // 
@@ -141,7 +141,7 @@
             this.Controls.Add(this.patronymicInput);
             this.Controls.Add(okpoLabel);
             this.Name = "DetailsEmployeeForm";
-            this.Text = "DetailsEmployeeForm";
+            this.Text = "Инфо мед. работника";
             this.ResumeLayout(false);
             this.PerformLayout();
 

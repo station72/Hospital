@@ -133,7 +133,7 @@
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.objectListView);
             this.Name = "DepartmentsForm";
-            this.Text = "DepartmentsForm";
+            this.Text = "Отделения";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView)).EndInit();
             this.ResumeLayout(false);
 

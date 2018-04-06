@@ -193,7 +193,7 @@
             this.Controls.Add(this.patronymicInput);
             this.Controls.Add(okpoLabel);
             this.Name = "EditEmployeeForm";
-            this.Text = "EditEmployeeForm";
+            this.Text = "Редактировать мед. персонал";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

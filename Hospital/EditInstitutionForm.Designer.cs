@@ -130,7 +130,7 @@
             this.Controls.Add(this.okpoInput);
             this.Controls.Add(okpoLabel);
             this.Name = "EditInstitutionForm";
-            this.Text = "EditInstitutionForm";
+            this.Text = "Редактировать лечебное учреждение";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
