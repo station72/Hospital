@@ -1,48 +1,31 @@
 ﻿using Hospital.Common;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Employee;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Hospital
 {
     public partial class CreateEmployeeForm : BaseForm
     {
         private readonly IEmployeeService _employeeService;
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
         private readonly EmployeesForm _parentForm;
         private readonly int _departmentId;
 
         public CreateEmployeeForm(EmployeesForm employeesForm, int departmentId)
         {
             InitializeComponent();
+
             _departmentId = departmentId;
             _parentForm = employeesForm;
             _employeeService = new EmployeeService();
-        }
-
-        //TODO: move to helper
-        private bool Validation()
-        {
-            var isValid = true;
-
-            if (string.IsNullOrWhiteSpace(firstNameInput.Text))
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
             {
-                errorProvider.SetError(firstNameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(secondNameInput.Text))
-            {
-                errorProvider.SetError(secondNameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(patronymicInput.Text))
-            {
-                errorProvider.SetError(patronymicInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
+               firstNameInput, patronymicInput, secondNameInput
+            });
         }
 
         //TODO: move to helper
@@ -64,10 +47,8 @@ namespace Hospital
         {
             errorProvider.Clear();
 
-            if (!Validation())
-            {
+            if (!_validHelper.Validate())
                 return;
-            }
 
             try
             {

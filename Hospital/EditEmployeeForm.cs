@@ -1,6 +1,7 @@
 ﻿using Hospital.Common;
 using Hospital.Dto;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Department;
 using Hospital.Services.Employee;
 using System;
@@ -19,14 +20,21 @@ namespace Hospital
         private readonly int _entityId;
         private IDepartmentService _departmentService { get; }
 
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
+
         public EditEmployeeForm(EmployeeDto entity, EmployeesForm employeesForm)
         {
             InitializeComponent();
+
             _employeeService = new EmployeeService();
             _departmentForm = employeesForm;
             _departmentId = entity.DepartmentId;
             _entityId = entity.Id;
             _departmentService = new DepartmentService();
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
+            {
+                firstNameInput, secondNameInput, patronymicInput
+            });
 
             InitFields(entity);
             InitAutoComlete(entity.Department);
@@ -70,32 +78,6 @@ namespace Hospital
             };
         }
 
-        //TODO: move to helper
-        private bool Validation()
-        {
-            var isValid = true;
-
-            if (string.IsNullOrWhiteSpace(firstNameInput.Text))
-            {
-                errorProvider.SetError(firstNameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(secondNameInput.Text))
-            {
-                errorProvider.SetError(secondNameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(patronymicInput.Text))
-            {
-                errorProvider.SetError(patronymicInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
         void SetUiActivity(bool isActive)
         {
             if (IsDisposed)
@@ -114,7 +96,7 @@ namespace Hospital
         private async void editButton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            if (!Validation())
+            if (!_validHelper.Validate())
                 return;
 
             try

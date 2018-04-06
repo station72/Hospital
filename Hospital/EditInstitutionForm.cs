@@ -1,12 +1,16 @@
 ﻿using Hospital.Common;
 using Hospital.Dto;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Institution;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Hospital
 {
     public partial class EditInstitutionForm : BaseForm
     {
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
         private readonly int _entityId;
         private readonly ITherapeuticInstitutionsService _institutionService;
         private readonly InstitutionsForm _institutionsForm;
@@ -17,6 +21,10 @@ namespace Hospital
             
             ControlBox = false;
             InitControls(entity);
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
+            {
+               addressInput, nameInput, okpoInput
+            });
 
             _entityId = entity.Id;
             _institutionsForm = institutionsForm;
@@ -28,30 +36,6 @@ namespace Hospital
             addressInput.Text = entity.Address;
             okpoInput.Text = entity.OKPO;
             nameInput.Text = entity.Name;
-        }
-
-        private bool Validation()
-        {
-            var isValid = true;
-            if (string.IsNullOrWhiteSpace(okpoInput.Text))
-            {
-                errorProvider.SetError(okpoInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(nameInput.Text))
-            {
-                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(addressInput.Text))
-            {
-                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
         }
 
         void SetUiActivity(bool isActive)
@@ -71,7 +55,7 @@ namespace Hospital
         {
             errorProvider.Clear();
 
-            if (!Validation())
+            if (!_validHelper.Validate())
                 return;
 
             try

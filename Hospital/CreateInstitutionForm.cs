@@ -1,7 +1,10 @@
 ﻿using Hospital.Common;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Institution;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Hospital
 {
@@ -9,40 +12,18 @@ namespace Hospital
     {
         private readonly ITherapeuticInstitutionsService _institutionService;
         private readonly InstitutionsForm _parentForm;
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
 
         public CreateInstitutionForm(InstitutionsForm parentForm)
         {
             InitializeComponent();
             _institutionService = new TherapeuticInstitutionsService();
             _parentForm = parentForm;
-        }
 
-        private bool Validation()
-        {
-            var isValid = true;
-
-            var okpo = okpoInput.Text;
-            if (string.IsNullOrWhiteSpace(okpo))
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
             {
-                errorProvider.SetError(okpoInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            var name = nameInput.Text;
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            var address = addressInput.Text;
-            if (string.IsNullOrWhiteSpace(address))
-            {
-                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
+               addressInput, nameInput, okpoInput
+            });
         }
 
         private void SetUiActivity(bool isActive)
@@ -60,10 +41,8 @@ namespace Hospital
         {
             errorProvider.Clear();
 
-            if (!Validation())
-            {
+            if (!_validHelper.Validate())
                 return;
-            }
 
             try
             {

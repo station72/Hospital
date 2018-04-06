@@ -1,6 +1,7 @@
 ﻿using Hospital.Common;
 using Hospital.Dto;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Department;
 using Hospital.Services.Institution;
 using System;
@@ -18,18 +19,24 @@ namespace Hospital
         private readonly IDepartmentService _departmentService;
         private readonly ITherapeuticInstitutionsService _institutionService;
         private readonly DepartmentsForm _departmentsForm;
+        private readonly IFieldIsRequiredValidationHelper _validHelper; 
 
         public EditDepartmentForm(
             DepartmentDto entity,
             DepartmentsForm departmentsForm)
         {
+            InitializeComponent();
+
             _entityId = entity.Id;
             _institutionId = entity.TherapeuticInstitutionsId;
             _departmentService = new DepartmentService();
             _institutionService = new TherapeuticInstitutionsService();
             _departmentsForm = departmentsForm;
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
+            {
+                profileInput, nameInput, addressInput
+            });
 
-            InitializeComponent();
             InitFields(entity);
             InitAutoComlete(entity.TherapeuticInstitution);
         }
@@ -73,7 +80,7 @@ namespace Hospital
         private async void editButton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            if (!Validation())
+            if (!_validHelper.Validate())
                 return;
 
             try
@@ -101,30 +108,6 @@ namespace Hospital
             {
                 SetUiActivity(true);
             }
-        }
-
-        private bool Validation()
-        {
-            var isValid = true;
-            if (string.IsNullOrWhiteSpace(profileInput.Text))
-            {
-                errorProvider.SetError(profileInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(nameInput.Text))
-            {
-                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(addressInput.Text))
-            {
-                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
         }
 
         void SetUiActivity(bool isActive)

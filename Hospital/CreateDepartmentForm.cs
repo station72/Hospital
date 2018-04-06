@@ -1,51 +1,31 @@
 ﻿using Hospital.Common;
 using Hospital.Dto.Input;
+using Hospital.Helpers;
 using Hospital.Services.Department;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Hospital
 {
     public partial class CreateDepartmentForm : BaseForm
     {
         private readonly IDepartmentService _departmentService;
+        private readonly IFieldIsRequiredValidationHelper _validHelper;
         private readonly DepartmentsForm _parentForm;
         private readonly int _therapeuticInstitutionId;
 
         public CreateDepartmentForm(DepartmentsForm departmentsForm, int therapeuticInstitutionId)
         {
             InitializeComponent();
+
             _therapeuticInstitutionId = therapeuticInstitutionId;
             _parentForm = departmentsForm;
             _departmentService = new DepartmentService();
-        }
-
-        //TODO: move to helper
-        private bool Validation()
-        {
-            var isValid = true;
-
-            var okpo = profileInput.Text;
-            if (string.IsNullOrWhiteSpace(okpo))
+            _validHelper = new FieldIsRequiredValidationHelper(errorProvider, new List<TextBox>
             {
-                errorProvider.SetError(profileInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            var name = nameInput.Text;
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                errorProvider.SetError(nameInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            var address = addressInput.Text;
-            if (string.IsNullOrWhiteSpace(address))
-            {
-                errorProvider.SetError(addressInput, FieldIsRequiredMessage);
-                isValid = false;
-            }
-
-            return isValid;
+               addressInput, nameInput, profileInput
+            });
         }
 
         //TODO: move to helper
@@ -64,10 +44,8 @@ namespace Hospital
         {
             errorProvider.Clear();
 
-            if (!Validation())
-            {
+            if (!_validHelper.Validate())
                 return;
-            }
 
             try
             {

@@ -120,6 +120,8 @@
     <Compile Include="EmployeesForm.Designer.cs">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FieldIsRequiredValidationHelper.cs" />
+    <Compile Include="Helpers\IFieldIsRequiredValidationHelper.cs" />
     <Compile Include="Helpers\IObjectListUpdateHelper.cs" />
     <Compile Include="Helpers\ObjectListUpdateHelper.cs" />
     <Compile Include="InstitutionsForm.cs">
