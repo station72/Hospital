@@ -28,7 +28,6 @@ namespace Hospital
             });
         }
 
-        //TODO: move to helper
         private void SetUiActivity(bool isActive)
         {
             if (IsDisposed)

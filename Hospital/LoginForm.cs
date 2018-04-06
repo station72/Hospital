@@ -41,34 +41,32 @@ namespace Hospital
             if (!_validHelper.Validate())
                 return;
 
-            try
-            {
-                SetUiActivity(false);
+            SetUiActivity(false);
 
-                await Task.Run(async () =>
+            //it is necessary for first start of ef
+            await Task.Run(async () =>
+            {
+                try
                 {
                     var user = await _userService.EnterAsync(UserNameInput.Text, PassInput.Text);
                     CurrentUser = user;
-                    
-                }).ContinueWith((a)=> 
-                {
+
                     BeginInvoke(new Action(() =>
                     {
                         Hide();
                         var instForm = new InstitutionsForm();
                         instForm.Show();
                     }));
-                });
-
-            }
-            catch (HospitalException ex)
-            {
-                errorProvider.SetError(EnterButton, ex.Message);
-            }
-            finally
-            {
-                SetUiActivity(true);
-            }
+                }
+                catch (HospitalException ex)
+                {
+                    BeginInvoke(new Action(() => { errorProvider.SetError(EnterButton, ex.Message); }));
+                }
+                finally
+                {
+                    BeginInvoke(new Action(() => { SetUiActivity(true); }));
+                }
+            });
         }
     }
 }

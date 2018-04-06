@@ -151,7 +151,7 @@
             this.Controls.Add(this.profileInput);
             this.Controls.Add(okpoLabel);
             this.Name = "EditDepartmentForm";
-            this.Text = "EditDepartmentForm";
+            this.Text = "Редактирование отделения";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

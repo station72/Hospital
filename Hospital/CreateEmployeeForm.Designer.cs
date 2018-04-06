@@ -109,35 +109,35 @@
             this.secondNameInput.Location = new System.Drawing.Point(128, 52);
             this.secondNameInput.Name = "secondNameInput";
             this.secondNameInput.Size = new System.Drawing.Size(322, 20);
-            this.secondNameInput.TabIndex = 1;
+            this.secondNameInput.TabIndex = 19;
             // 
             // firstNameInput
             // 
             this.firstNameInput.Location = new System.Drawing.Point(128, 18);
             this.firstNameInput.Name = "firstNameInput";
             this.firstNameInput.Size = new System.Drawing.Size(322, 20);
-            this.firstNameInput.TabIndex = 0;
+            this.firstNameInput.TabIndex = 17;
             // 
             // patronymicInput
             // 
             this.patronymicInput.Location = new System.Drawing.Point(128, 88);
             this.patronymicInput.Name = "patronymicInput";
             this.patronymicInput.Size = new System.Drawing.Size(322, 20);
-            this.patronymicInput.TabIndex = 2;
+            this.patronymicInput.TabIndex = 15;
             // 
             // cabinetInput
             // 
             this.cabinetInput.Location = new System.Drawing.Point(128, 125);
             this.cabinetInput.Name = "cabinetInput";
             this.cabinetInput.Size = new System.Drawing.Size(322, 20);
-            this.cabinetInput.TabIndex = 3;
+            this.cabinetInput.TabIndex = 24;
             // 
             // scheduleInput
             // 
             this.scheduleInput.Location = new System.Drawing.Point(128, 161);
             this.scheduleInput.Name = "scheduleInput";
             this.scheduleInput.Size = new System.Drawing.Size(322, 20);
-            this.scheduleInput.TabIndex = 4;
+            this.scheduleInput.TabIndex = 22;
             // 
             // errorProvider
             // 

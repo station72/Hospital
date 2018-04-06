@@ -35,7 +35,6 @@ namespace Hospital
             detailButton.Enabled = isEnabled;
         }
 
-        //TODO: move to helper
         private void ObjectListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = objectListView.SelectedObject as TherapeuticInstitutionDto;

@@ -60,14 +60,14 @@ namespace Hospital.Services.Employee
                 .FirstOrDefaultAsync(u => u.Id == inputDto.DepartmentId && !u.IsDeleted);
 
             if (department == null)
-                throw new HospitalException($"Отделение с id = {inputDto.DepartmentId} не найдена!");
+                throw new HospitalException($"Отделение с id = {inputDto.DepartmentId} не найдено!");
 
             entity.Cabinet = inputDto.Cabinet;
             entity.DepartmentId = inputDto.DepartmentId;
             entity.FirstName = inputDto.FirstName;
             entity.LastName = inputDto.LastName;
             entity.Patronymic = inputDto.Patronymic;
-            entity.Schedule = inputDto.Patronymic;
+            entity.Schedule = inputDto.Schedule;
 
             await _dc.SaveChangesAsync();
 
