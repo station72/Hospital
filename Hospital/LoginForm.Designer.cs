@@ -76,14 +76,14 @@
             this.UserNameInput.Location = new System.Drawing.Point(138, 52);
             this.UserNameInput.Name = "UserNameInput";
             this.UserNameInput.Size = new System.Drawing.Size(311, 20);
-            this.UserNameInput.TabIndex = 3;
+            this.UserNameInput.TabIndex = 0;
             // 
             // PassInput
             // 
             this.PassInput.Location = new System.Drawing.Point(138, 94);
             this.PassInput.Name = "PassInput";
             this.PassInput.Size = new System.Drawing.Size(311, 20);
-            this.PassInput.TabIndex = 6;
+            this.PassInput.TabIndex = 1;
             // 
             // errorProvider
             // 

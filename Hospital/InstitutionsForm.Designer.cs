@@ -76,7 +76,7 @@
             this.editButton.Location = new System.Drawing.Point(819, 59);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(114, 40);
-            this.editButton.TabIndex = 1;
+            this.editButton.TabIndex = 6;
             this.editButton.Text = "Редактировать";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -86,7 +86,7 @@
             this.addButton.Location = new System.Drawing.Point(819, 12);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(113, 41);
-            this.addButton.TabIndex = 2;
+            this.addButton.TabIndex = 5;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -96,7 +96,7 @@
             this.deleteButton.Location = new System.Drawing.Point(819, 105);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(114, 40);
-            this.deleteButton.TabIndex = 3;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -106,7 +106,7 @@
             this.showDepartmentsButton.Location = new System.Drawing.Point(12, 12);
             this.showDepartmentsButton.Name = "showDepartmentsButton";
             this.showDepartmentsButton.Size = new System.Drawing.Size(114, 40);
-            this.showDepartmentsButton.TabIndex = 4;
+            this.showDepartmentsButton.TabIndex = 0;
             this.showDepartmentsButton.Text = "Отделения";
             this.showDepartmentsButton.UseVisualStyleBackColor = true;
             this.showDepartmentsButton.Click += new System.EventHandler(this.showDepartmentsButton_Click);
@@ -116,7 +116,7 @@
             this.detailButton.Location = new System.Drawing.Point(12, 59);
             this.detailButton.Name = "detailButton";
             this.detailButton.Size = new System.Drawing.Size(114, 40);
-            this.detailButton.TabIndex = 5;
+            this.detailButton.TabIndex = 1;
             this.detailButton.Text = "Подробнее";
             this.detailButton.UseVisualStyleBackColor = true;
             this.detailButton.Click += new System.EventHandler(this.detailButton_Click);

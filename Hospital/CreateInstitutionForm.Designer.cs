@@ -75,21 +75,21 @@
             this.okpoInput.Location = new System.Drawing.Point(105, 9);
             this.okpoInput.Name = "okpoInput";
             this.okpoInput.Size = new System.Drawing.Size(322, 20);
-            this.okpoInput.TabIndex = 1;
+            this.okpoInput.TabIndex = 0;
             // 
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(105, 40);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(322, 20);
-            this.nameInput.TabIndex = 3;
+            this.nameInput.TabIndex = 1;
             // 
             // addressInput
             // 
             this.addressInput.Location = new System.Drawing.Point(105, 74);
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(322, 20);
-            this.addressInput.TabIndex = 5;
+            this.addressInput.TabIndex = 2;
             // 
             // createButton
             // 

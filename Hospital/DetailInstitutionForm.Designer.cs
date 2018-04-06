@@ -39,13 +39,6 @@
             okpoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // addressInput
-            // 
-            this.addressInput.Location = new System.Drawing.Point(123, 77);
-            this.addressInput.Name = "addressInput";
-            this.addressInput.Size = new System.Drawing.Size(322, 20);
-            this.addressInput.TabIndex = 18;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -54,13 +47,6 @@
             label2.Size = new System.Drawing.Size(38, 13);
             label2.TabIndex = 17;
             label2.Text = "Адрес";
-            // 
-            // nameInput
-            // 
-            this.nameInput.Location = new System.Drawing.Point(123, 43);
-            this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(322, 20);
-            this.nameInput.TabIndex = 16;
             // 
             // label1
             // 
@@ -71,13 +57,6 @@
             label1.TabIndex = 15;
             label1.Text = "Название";
             // 
-            // okpoInput
-            // 
-            this.okpoInput.Location = new System.Drawing.Point(123, 12);
-            this.okpoInput.Name = "okpoInput";
-            this.okpoInput.Size = new System.Drawing.Size(322, 20);
-            this.okpoInput.TabIndex = 14;
-            // 
             // okpoLabel
             // 
             okpoLabel.AutoSize = true;
@@ -86,6 +65,27 @@
             okpoLabel.Size = new System.Drawing.Size(38, 13);
             okpoLabel.TabIndex = 13;
             okpoLabel.Text = "ОКПО";
+            // 
+            // addressInput
+            // 
+            this.addressInput.Location = new System.Drawing.Point(123, 77);
+            this.addressInput.Name = "addressInput";
+            this.addressInput.Size = new System.Drawing.Size(322, 20);
+            this.addressInput.TabIndex = 2;
+            // 
+            // nameInput
+            // 
+            this.nameInput.Location = new System.Drawing.Point(123, 43);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(322, 20);
+            this.nameInput.TabIndex = 1;
+            // 
+            // okpoInput
+            // 
+            this.okpoInput.Location = new System.Drawing.Point(123, 12);
+            this.okpoInput.Name = "okpoInput";
+            this.okpoInput.Size = new System.Drawing.Size(322, 20);
+            this.okpoInput.TabIndex = 0;
             // 
             // DetailInstitutionForm
             // 

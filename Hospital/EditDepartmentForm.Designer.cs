@@ -78,7 +78,7 @@
             this.editButton.Location = new System.Drawing.Point(128, 175);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(142, 53);
-            this.editButton.TabIndex = 20;
+            this.editButton.TabIndex = 5;
             this.editButton.Text = "Сохранить";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -88,21 +88,21 @@
             this.addressInput.Location = new System.Drawing.Point(128, 51);
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(322, 20);
-            this.addressInput.TabIndex = 19;
+            this.addressInput.TabIndex = 2;
             // 
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(128, 17);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(322, 20);
-            this.nameInput.TabIndex = 17;
+            this.nameInput.TabIndex = 1;
             // 
             // profileInput
             // 
             this.profileInput.Location = new System.Drawing.Point(128, 87);
             this.profileInput.Name = "profileInput";
             this.profileInput.Size = new System.Drawing.Size(322, 20);
-            this.profileInput.TabIndex = 15;
+            this.profileInput.TabIndex = 3;
             // 
             // errorProvider
             // 
@@ -113,7 +113,7 @@
             this.cancelButton.Location = new System.Drawing.Point(308, 175);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(142, 53);
-            this.cancelButton.TabIndex = 21;
+            this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -133,7 +133,7 @@
             this.suggestInstitutionInput.Location = new System.Drawing.Point(128, 126);
             this.suggestInstitutionInput.Name = "suggestInstitutionInput";
             this.suggestInstitutionInput.Size = new System.Drawing.Size(322, 21);
-            this.suggestInstitutionInput.TabIndex = 24;
+            this.suggestInstitutionInput.TabIndex = 4;
             // 
             // EditDepartmentForm
             // 

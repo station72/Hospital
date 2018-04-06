@@ -44,7 +44,7 @@
             this.showPersonalButton.Location = new System.Drawing.Point(12, 12);
             this.showPersonalButton.Name = "showPersonalButton";
             this.showPersonalButton.Size = new System.Drawing.Size(114, 40);
-            this.showPersonalButton.TabIndex = 9;
+            this.showPersonalButton.TabIndex = 0;
             this.showPersonalButton.Text = "Мед. персонал";
             this.showPersonalButton.UseVisualStyleBackColor = true;
             this.showPersonalButton.Click += new System.EventHandler(this.showPersonalButton_Click);
@@ -54,7 +54,7 @@
             this.deleteButton.Location = new System.Drawing.Point(819, 105);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(114, 40);
-            this.deleteButton.TabIndex = 8;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -64,7 +64,7 @@
             this.addButton.Location = new System.Drawing.Point(819, 12);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(113, 41);
-            this.addButton.TabIndex = 7;
+            this.addButton.TabIndex = 5;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -116,7 +116,7 @@
             this.detailsButton.Location = new System.Drawing.Point(12, 59);
             this.detailsButton.Name = "detailsButton";
             this.detailsButton.Size = new System.Drawing.Size(114, 40);
-            this.detailsButton.TabIndex = 10;
+            this.detailsButton.TabIndex = 1;
             this.detailsButton.Text = "Подробнее";
             this.detailsButton.UseVisualStyleBackColor = true;
             this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);

@@ -71,21 +71,21 @@
             this.addressInput.Location = new System.Drawing.Point(125, 46);
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(322, 20);
-            this.addressInput.TabIndex = 30;
+            this.addressInput.TabIndex = 1;
             // 
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(125, 12);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(322, 20);
-            this.nameInput.TabIndex = 28;
+            this.nameInput.TabIndex = 0;
             // 
             // profileInput
             // 
             this.profileInput.Location = new System.Drawing.Point(125, 82);
             this.profileInput.Name = "profileInput";
             this.profileInput.Size = new System.Drawing.Size(322, 20);
-            this.profileInput.TabIndex = 26;
+            this.profileInput.TabIndex = 2;
             // 
             // DetailsDepartmentForm
             // 

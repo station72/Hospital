@@ -44,23 +44,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(110, 170);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(147, 53);
-            this.editButton.TabIndex = 13;
-            this.editButton.Text = "Сохранить";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // addressInput
-            // 
-            this.addressInput.Location = new System.Drawing.Point(128, 86);
-            this.addressInput.Name = "addressInput";
-            this.addressInput.Size = new System.Drawing.Size(322, 20);
-            this.addressInput.TabIndex = 12;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -69,13 +52,6 @@
             label2.Size = new System.Drawing.Size(38, 13);
             label2.TabIndex = 11;
             label2.Text = "Адрес";
-            // 
-            // nameInput
-            // 
-            this.nameInput.Location = new System.Drawing.Point(128, 52);
-            this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(322, 20);
-            this.nameInput.TabIndex = 10;
             // 
             // label1
             // 
@@ -86,13 +62,6 @@
             label1.TabIndex = 9;
             label1.Text = "Название";
             // 
-            // okpoInput
-            // 
-            this.okpoInput.Location = new System.Drawing.Point(128, 21);
-            this.okpoInput.Name = "okpoInput";
-            this.okpoInput.Size = new System.Drawing.Size(322, 20);
-            this.okpoInput.TabIndex = 8;
-            // 
             // okpoLabel
             // 
             okpoLabel.AutoSize = true;
@@ -102,12 +71,43 @@
             okpoLabel.TabIndex = 7;
             okpoLabel.Text = "ОКПО";
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(110, 170);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(147, 53);
+            this.editButton.TabIndex = 3;
+            this.editButton.Text = "Сохранить";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // addressInput
+            // 
+            this.addressInput.Location = new System.Drawing.Point(128, 86);
+            this.addressInput.Name = "addressInput";
+            this.addressInput.Size = new System.Drawing.Size(322, 20);
+            this.addressInput.TabIndex = 2;
+            // 
+            // nameInput
+            // 
+            this.nameInput.Location = new System.Drawing.Point(128, 52);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(322, 20);
+            this.nameInput.TabIndex = 1;
+            // 
+            // okpoInput
+            // 
+            this.okpoInput.Location = new System.Drawing.Point(128, 21);
+            this.okpoInput.Name = "okpoInput";
+            this.okpoInput.Size = new System.Drawing.Size(322, 20);
+            this.okpoInput.TabIndex = 0;
+            // 
             // cancelButton
             // 
             this.cancelButton.Location = new System.Drawing.Point(303, 170);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(147, 53);
-            this.cancelButton.TabIndex = 14;
+            this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);

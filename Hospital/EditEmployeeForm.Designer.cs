@@ -102,35 +102,35 @@
             this.cabinetInput.Location = new System.Drawing.Point(109, 121);
             this.cabinetInput.Name = "cabinetInput";
             this.cabinetInput.Size = new System.Drawing.Size(322, 20);
-            this.cabinetInput.TabIndex = 35;
+            this.cabinetInput.TabIndex = 3;
             // 
             // scheduleInput
             // 
             this.scheduleInput.Location = new System.Drawing.Point(109, 157);
             this.scheduleInput.Name = "scheduleInput";
             this.scheduleInput.Size = new System.Drawing.Size(322, 20);
-            this.scheduleInput.TabIndex = 33;
+            this.scheduleInput.TabIndex = 4;
             // 
             // secondNameInput
             // 
             this.secondNameInput.Location = new System.Drawing.Point(109, 48);
             this.secondNameInput.Name = "secondNameInput";
             this.secondNameInput.Size = new System.Drawing.Size(322, 20);
-            this.secondNameInput.TabIndex = 30;
+            this.secondNameInput.TabIndex = 1;
             // 
             // firstNameInput
             // 
             this.firstNameInput.Location = new System.Drawing.Point(109, 14);
             this.firstNameInput.Name = "firstNameInput";
             this.firstNameInput.Size = new System.Drawing.Size(322, 20);
-            this.firstNameInput.TabIndex = 28;
+            this.firstNameInput.TabIndex = 0;
             // 
             // patronymicInput
             // 
             this.patronymicInput.Location = new System.Drawing.Point(109, 84);
             this.patronymicInput.Name = "patronymicInput";
             this.patronymicInput.Size = new System.Drawing.Size(322, 20);
-            this.patronymicInput.TabIndex = 26;
+            this.patronymicInput.TabIndex = 2;
             // 
             // suggestDepartmentInput
             // 
@@ -138,7 +138,7 @@
             this.suggestDepartmentInput.Location = new System.Drawing.Point(109, 194);
             this.suggestDepartmentInput.Name = "suggestDepartmentInput";
             this.suggestDepartmentInput.Size = new System.Drawing.Size(322, 21);
-            this.suggestDepartmentInput.TabIndex = 36;
+            this.suggestDepartmentInput.TabIndex = 5;
             // 
             // label5
             // 
@@ -154,7 +154,7 @@
             this.cancelButton.Location = new System.Drawing.Point(289, 235);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(142, 53);
-            this.cancelButton.TabIndex = 39;
+            this.cancelButton.TabIndex = 7;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -164,7 +164,7 @@
             this.editButton.Location = new System.Drawing.Point(109, 235);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(142, 53);
-            this.editButton.TabIndex = 38;
+            this.editButton.TabIndex = 6;
             this.editButton.Text = "Сохранить";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);

@@ -43,7 +43,7 @@
             this.deleteButton.Location = new System.Drawing.Point(819, 105);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(114, 40);
-            this.deleteButton.TabIndex = 8;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_ClickAsync);
@@ -53,7 +53,7 @@
             this.addButton.Location = new System.Drawing.Point(819, 12);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(113, 41);
-            this.addButton.TabIndex = 7;
+            this.addButton.TabIndex = 5;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -107,7 +107,7 @@
             this.detailsButton.Location = new System.Drawing.Point(12, 12);
             this.detailsButton.Name = "detailsButton";
             this.detailsButton.Size = new System.Drawing.Size(113, 41);
-            this.detailsButton.TabIndex = 9;
+            this.detailsButton.TabIndex = 0;
             this.detailsButton.Text = "Подробнее";
             this.detailsButton.UseVisualStyleBackColor = true;
             this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
